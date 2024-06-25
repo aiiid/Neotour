@@ -1,0 +1,532 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		51C6AD6BBCD227050480F8D6 /* Pods_NeoTour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88B9BA9D22933CB133CA10D5 /* Pods_NeoTour.framework */; };
+		E202C1F92C2A7D22004AAF83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C1F82C2A7D22004AAF83 /* AppDelegate.swift */; };
+		E202C1FB2C2A7D22004AAF83 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C1FA2C2A7D22004AAF83 /* SceneDelegate.swift */; };
+		E202C2022C2A7D24004AAF83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E202C2012C2A7D24004AAF83 /* Assets.xcassets */; };
+		E202C2052C2A7D24004AAF83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E202C2032C2A7D24004AAF83 /* LaunchScreen.storyboard */; };
+		E202C20E2C2A7EFA004AAF83 /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C20D2C2A7EFA004AAF83 /* OnboardingModel.swift */; };
+		E202C2112C2A7F2C004AAF83 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C2102C2A7F2C004AAF83 /* OnboardingViewModel.swift */; };
+		E202C2132C2A7F34004AAF83 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C2122C2A7F34004AAF83 /* OnboardingView.swift */; };
+		E202C2152C2A7F57004AAF83 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C2142C2A7F57004AAF83 /* OnboardingViewController.swift */; };
+		E202C2192C2A881A004AAF83 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C2182C2A881A004AAF83 /* MainViewController.swift */; };
+		E202C21B2C2A8820004AAF83 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C21A2C2A8820004AAF83 /* MainView.swift */; };
+		E202C21D2C2A8826004AAF83 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C21C2C2A8826004AAF83 /* MainViewModel.swift */; };
+		E202C2202C2B3164004AAF83 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C21F2C2B3164004AAF83 /* Extension.swift */; };
+		E202C2222C2B316A004AAF83 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C2212C2B316A004AAF83 /* Constants.swift */; };
+		E202C2252C2B3499004AAF83 /* SF-Pro-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E202C2242C2B3496004AAF83 /* SF-Pro-Text-Semibold.otf */; };
+		E202C2292C2B355A004AAF83 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E202C2282C2B34DC004AAF83 /* SF-Pro-Text-Regular.otf */; };
+		E202C22A2C2B355C004AAF83 /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E202C2262C2B34C4004AAF83 /* SF-Pro-Display-Regular.otf */; };
+		E202C22B2C2B355E004AAF83 /* SF-Pro-Display-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = E202C2272C2B34D1004AAF83 /* SF-Pro-Display-SemiboldItalic.otf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0F386A32198F3CA4529066DE /* Pods-NeoTour.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeoTour.debug.xcconfig"; path = "Target Support Files/Pods-NeoTour/Pods-NeoTour.debug.xcconfig"; sourceTree = "<group>"; };
+		1DE596F8BEF66E021D096243 /* Pods-NeoTour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeoTour.release.xcconfig"; path = "Target Support Files/Pods-NeoTour/Pods-NeoTour.release.xcconfig"; sourceTree = "<group>"; };
+		88B9BA9D22933CB133CA10D5 /* Pods_NeoTour.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NeoTour.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E202C1F52C2A7D22004AAF83 /* NeoTour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeoTour.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E202C1F82C2A7D22004AAF83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E202C1FA2C2A7D22004AAF83 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E202C2012C2A7D24004AAF83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E202C2042C2A7D24004AAF83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E202C2062C2A7D24004AAF83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E202C20D2C2A7EFA004AAF83 /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
+		E202C2102C2A7F2C004AAF83 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		E202C2122C2A7F34004AAF83 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		E202C2142C2A7F57004AAF83 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		E202C2182C2A881A004AAF83 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E202C21A2C2A8820004AAF83 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		E202C21C2C2A8826004AAF83 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		E202C21F2C2B3164004AAF83 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		E202C2212C2B316A004AAF83 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E202C2242C2B3496004AAF83 /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
+		E202C2262C2B34C4004AAF83 /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
+		E202C2272C2B34D1004AAF83 /* SF-Pro-Display-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-SemiboldItalic.otf"; sourceTree = "<group>"; };
+		E202C2282C2B34DC004AAF83 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E202C1F22C2A7D22004AAF83 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51C6AD6BBCD227050480F8D6 /* Pods_NeoTour.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		91D907A619CEE26B3F50E922 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				88B9BA9D22933CB133CA10D5 /* Pods_NeoTour.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B4CEFC21167E43F82EFF5699 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0F386A32198F3CA4529066DE /* Pods-NeoTour.debug.xcconfig */,
+				1DE596F8BEF66E021D096243 /* Pods-NeoTour.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E202C1EC2C2A7D22004AAF83 = {
+			isa = PBXGroup;
+			children = (
+				E202C1F72C2A7D22004AAF83 /* NeoTour */,
+				E202C1F62C2A7D22004AAF83 /* Products */,
+				B4CEFC21167E43F82EFF5699 /* Pods */,
+				91D907A619CEE26B3F50E922 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E202C1F62C2A7D22004AAF83 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E202C1F52C2A7D22004AAF83 /* NeoTour.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E202C1F72C2A7D22004AAF83 /* NeoTour */ = {
+			isa = PBXGroup;
+			children = (
+				E202C21E2C2B315A004AAF83 /* Utilities */,
+				E202C20F2C2A7EFE004AAF83 /* Onboarding */,
+				E202C2172C2A87F6004AAF83 /* Main */,
+				E202C20C2C2A7EAA004AAF83 /* Support */,
+				E202C2062C2A7D24004AAF83 /* Info.plist */,
+			);
+			path = NeoTour;
+			sourceTree = "<group>";
+		};
+		E202C20C2C2A7EAA004AAF83 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				E202C1F82C2A7D22004AAF83 /* AppDelegate.swift */,
+				E202C1FA2C2A7D22004AAF83 /* SceneDelegate.swift */,
+				E202C2012C2A7D24004AAF83 /* Assets.xcassets */,
+				E202C2032C2A7D24004AAF83 /* LaunchScreen.storyboard */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		E202C20F2C2A7EFE004AAF83 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				E202C20D2C2A7EFA004AAF83 /* OnboardingModel.swift */,
+				E202C2102C2A7F2C004AAF83 /* OnboardingViewModel.swift */,
+				E202C2122C2A7F34004AAF83 /* OnboardingView.swift */,
+				E202C2142C2A7F57004AAF83 /* OnboardingViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		E202C2172C2A87F6004AAF83 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				E202C2182C2A881A004AAF83 /* MainViewController.swift */,
+				E202C21A2C2A8820004AAF83 /* MainView.swift */,
+				E202C21C2C2A8826004AAF83 /* MainViewModel.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		E202C21E2C2B315A004AAF83 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E202C2232C2B347E004AAF83 /* Fonts */,
+				E202C21F2C2B3164004AAF83 /* Extension.swift */,
+				E202C2212C2B316A004AAF83 /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		E202C2232C2B347E004AAF83 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E202C2282C2B34DC004AAF83 /* SF-Pro-Text-Regular.otf */,
+				E202C2262C2B34C4004AAF83 /* SF-Pro-Display-Regular.otf */,
+				E202C2272C2B34D1004AAF83 /* SF-Pro-Display-SemiboldItalic.otf */,
+				E202C2242C2B3496004AAF83 /* SF-Pro-Text-Semibold.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E202C1F42C2A7D22004AAF83 /* NeoTour */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E202C2092C2A7D24004AAF83 /* Build configuration list for PBXNativeTarget "NeoTour" */;
+			buildPhases = (
+				DEC2E504E79EBC2622310623 /* [CP] Check Pods Manifest.lock */,
+				E202C2162C2A82CF004AAF83 /* ShellScript */,
+				E202C1F12C2A7D22004AAF83 /* Sources */,
+				E202C1F22C2A7D22004AAF83 /* Frameworks */,
+				E202C1F32C2A7D22004AAF83 /* Resources */,
+				63953109E26FC0782DA75D22 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NeoTour;
+			productName = NeoTour;
+			productReference = E202C1F52C2A7D22004AAF83 /* NeoTour.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E202C1ED2C2A7D22004AAF83 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					E202C1F42C2A7D22004AAF83 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = E202C1F02C2A7D22004AAF83 /* Build configuration list for PBXProject "NeoTour" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E202C1EC2C2A7D22004AAF83;
+			productRefGroup = E202C1F62C2A7D22004AAF83 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E202C1F42C2A7D22004AAF83 /* NeoTour */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E202C1F32C2A7D22004AAF83 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E202C2252C2B3499004AAF83 /* SF-Pro-Text-Semibold.otf in Resources */,
+				E202C2052C2A7D24004AAF83 /* LaunchScreen.storyboard in Resources */,
+				E202C22B2C2B355E004AAF83 /* SF-Pro-Display-SemiboldItalic.otf in Resources */,
+				E202C2292C2B355A004AAF83 /* SF-Pro-Text-Regular.otf in Resources */,
+				E202C22A2C2B355C004AAF83 /* SF-Pro-Display-Regular.otf in Resources */,
+				E202C2022C2A7D24004AAF83 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		63953109E26FC0782DA75D22 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NeoTour/Pods-NeoTour-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NeoTour/Pods-NeoTour-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NeoTour/Pods-NeoTour-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DEC2E504E79EBC2622310623 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NeoTour-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E202C2162C2A82CF004AAF83 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E202C1F12C2A7D22004AAF83 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E202C2112C2A7F2C004AAF83 /* OnboardingViewModel.swift in Sources */,
+				E202C2222C2B316A004AAF83 /* Constants.swift in Sources */,
+				E202C21B2C2A8820004AAF83 /* MainView.swift in Sources */,
+				E202C20E2C2A7EFA004AAF83 /* OnboardingModel.swift in Sources */,
+				E202C2132C2A7F34004AAF83 /* OnboardingView.swift in Sources */,
+				E202C21D2C2A8826004AAF83 /* MainViewModel.swift in Sources */,
+				E202C2202C2B3164004AAF83 /* Extension.swift in Sources */,
+				E202C2152C2A7F57004AAF83 /* OnboardingViewController.swift in Sources */,
+				E202C1F92C2A7D22004AAF83 /* AppDelegate.swift in Sources */,
+				E202C1FB2C2A7D22004AAF83 /* SceneDelegate.swift in Sources */,
+				E202C2192C2A881A004AAF83 /* MainViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E202C2032C2A7D24004AAF83 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E202C2042C2A7D24004AAF83 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E202C2072C2A7D24004AAF83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E202C2082C2A7D24004AAF83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E202C20A2C2A7D24004AAF83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F386A32198F3CA4529066DE /* Pods-NeoTour.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SD8XJ5V53F;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NeoTour/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Aida-Abdirakhman.NeoTour";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E202C20B2C2A7D24004AAF83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DE596F8BEF66E021D096243 /* Pods-NeoTour.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SD8XJ5V53F;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NeoTour/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Aida-Abdirakhman.NeoTour";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E202C1F02C2A7D22004AAF83 /* Build configuration list for PBXProject "NeoTour" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E202C2072C2A7D24004AAF83 /* Debug */,
+				E202C2082C2A7D24004AAF83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E202C2092C2A7D24004AAF83 /* Build configuration list for PBXNativeTarget "NeoTour" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E202C20A2C2A7D24004AAF83 /* Debug */,
+				E202C20B2C2A7D24004AAF83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E202C1ED2C2A7D22004AAF83 /* Project object */;
+}
