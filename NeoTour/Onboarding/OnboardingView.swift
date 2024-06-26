@@ -4,24 +4,39 @@
 //
 //  Created by Ai Hawok on 25/06/2024.
 //
-
 import UIKit
 import SnapKit
 
 class OnboardingView: UIView {
     
     let letsGoButton: UIButton = {
-        let button =  UIButton(type: .system)
-        button.setTitle("Let's go", for: .normal)
-        button.backgroundColor = Constants.Colors.primaryColor
-        button.layer.cornerRadius = 25
+        var configuration = UIButton.Configuration.filled()
+        configuration.title = "Let's go"
+        
+        if let originalImage = UIImage(named: "arrowRight.png") {
+            let size = CGSize(width: 37, height: 16)
+            let renderer = UIGraphicsImageRenderer(size: size)
+            let resizedImage = renderer.image { _ in
+                originalImage.draw(in: CGRect(origin: .zero, size: size))
+            }
+            configuration.image = resizedImage
+        }
+
+        configuration.imagePadding = 8
+        configuration.baseBackgroundColor = Constants.Colors.primaryColor
+        configuration.baseForegroundColor = .white
+        configuration.cornerStyle = .large
+        configuration.imagePlacement = .trailing
+        
+        let button = UIButton(configuration: configuration, primaryAction: nil)
+       
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
     let titleText: UILabel = {
         let text = UILabel()
-        text.font = UIFont(name: "SFProDisplay-Regular", size: 36)
+        text.font = UIFont(name: "SFProText-Bold", size: 36)
         text.text = "Winter Vacation Trips"
         text.numberOfLines = 0
         text.translatesAutoresizingMaskIntoConstraints = false
@@ -30,23 +45,34 @@ class OnboardingView: UIView {
     
     let descriptionText: UILabel = {
         let text = UILabel()
-        text.font = UIFont(name: "SF-Pro-Text-Regular.otf", size: 36)
-        text.text = """
-        Enjoy your winter vacations with warmth
-        and amazing sightseeing on the mountains.
-        Enjoy the best experience with us!
-        """
+        let strokeTextAttributes: [NSAttributedString.Key: Any] = [
+            .strokeColor: Constants.Colors.primaryColor,
+            .foregroundColor: UIColor.white,
+            .strokeWidth: -3.0,
+            .font: UIFont(name: "SFProDisplay-SemiboldItalic", size: 16) as Any
+        ]
+        
+        text.attributedText = NSAttributedString(
+            string: """
+                    Enjoy your winter vacations with warmth
+                    and amazing sightseeing on the mountains.
+                    Enjoy the best experience with us!
+                    """,
+            attributes: strokeTextAttributes
+        )
+        
         text.numberOfLines = 0
         text.translatesAutoresizingMaskIntoConstraints = false
         return text
     }()
     
     let mainImage: UIImageView = {
-        let image = UIImageView(image: UIImage(named: "OnboardingImage.png"))
-        image.layer.cornerRadius = 25
-        return image
+        let imageView = UIImageView(image: UIImage(named: "onboardingImage.png"))
+        imageView.layer.cornerRadius = 25
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        return imageView
     }()
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -66,30 +92,28 @@ class OnboardingView: UIView {
         addSubview(descriptionText)
         
         mainImage.snp.makeConstraints { make in
-            make.width.equalTo(643)
-            make.height.equalTo(480)
-            make.centerX.equalToSuperview()
             make.top.equalToSuperview()
+            make.width.equalToSuperview()
+            make.height.equalToSuperview().multipliedBy(0.5)
+            make.centerX.equalToSuperview()
         }
         
         titleText.snp.makeConstraints { make in
             make.top.equalTo(mainImage.snp.bottom).offset(20)
-            make.centerX.equalToSuperview()
-            make.width.equalTo(283)
-            make.height.equalTo(86)
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().offset(-116)
         }
         
         descriptionText.snp.makeConstraints { make in
             make.top.equalTo(titleText.snp.bottom).offset(12)
-            make.centerX.equalToSuperview()
-            make.width.equalTo(260)
-            make.height.equalTo(78)
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().offset(-50)
         }
         
         letsGoButton.snp.makeConstraints { make in
             make.top.equalTo(descriptionText.snp.bottom).offset(40)
-            make.centerX.equalToSuperview()
-            make.width.equalTo(178)
+            make.leading.equalToSuperview().offset(16)
+            make.width.equalTo(150)
             make.height.equalTo(53)
         }
     }

@@ -26,3 +26,32 @@ extension UIColor {
         self.init(red: red, green: green, blue: blue, alpha: alpha)
     }
 }
+
+extension UIFont {
+    static func registerFont(withName name: String, fileExtension: String) {
+        guard let pathForResourceString = Bundle.main.path(forResource: name, ofType: fileExtension) else {
+            print("UIFont+:  Failed to find path for resource named: \(name).")
+            return
+        }
+
+        guard let fontData = NSData(contentsOfFile: pathForResourceString) else {
+            print("UIFont+:  Failed to load font data from: \(pathForResourceString).")
+            return
+        }
+
+        guard let dataProvider = CGDataProvider(data: fontData) else {
+            print("UIFont+:  Failed to create data provider from font data.")
+            return
+        }
+
+        guard let fontRef = CGFont(dataProvider) else {
+            print("UIFont+:  Failed to create font from data provider.")
+            return
+        }
+
+        var errorRef: Unmanaged<CFError>?
+        if CTFontManagerRegisterGraphicsFont(fontRef, &errorRef) == false {
+            print("UIFont+:  Failed to register font: \(errorRef.debugDescription).")
+        }
+    }
+}

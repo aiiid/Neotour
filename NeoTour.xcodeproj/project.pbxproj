@@ -25,6 +25,10 @@
 		E202C2292C2B355A004AAF83 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E202C2282C2B34DC004AAF83 /* SF-Pro-Text-Regular.otf */; };
 		E202C22A2C2B355C004AAF83 /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E202C2262C2B34C4004AAF83 /* SF-Pro-Display-Regular.otf */; };
 		E202C22B2C2B355E004AAF83 /* SF-Pro-Display-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = E202C2272C2B34D1004AAF83 /* SF-Pro-Display-SemiboldItalic.otf */; };
+		E202C22D2C2BCED3004AAF83 /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E202C22C2C2BCED0004AAF83 /* SF-Pro-Text-Bold.otf */; };
+		E202C2302C2BE92B004AAF83 /* TravelCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C22F2C2BE92B004AAF83 /* TravelCategoryCell.swift */; };
+		E202C2322C2BEAF7004AAF83 /* AppLayouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C2312C2BEAF7004AAF83 /* AppLayouts.swift */; };
+		E202C2342C2BFA16004AAF83 /* DiscoverPlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C2332C2BFA16004AAF83 /* DiscoverPlaceCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +54,10 @@
 		E202C2262C2B34C4004AAF83 /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
 		E202C2272C2B34D1004AAF83 /* SF-Pro-Display-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-SemiboldItalic.otf"; sourceTree = "<group>"; };
 		E202C2282C2B34DC004AAF83 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
+		E202C22C2C2BCED0004AAF83 /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
+		E202C22F2C2BE92B004AAF83 /* TravelCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelCategoryCell.swift; sourceTree = "<group>"; };
+		E202C2312C2BEAF7004AAF83 /* AppLayouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLayouts.swift; sourceTree = "<group>"; };
+		E202C2332C2BFA16004AAF83 /* DiscoverPlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverPlaceCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,9 +144,11 @@
 		E202C2172C2A87F6004AAF83 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				E202C22E2C2BE8D8004AAF83 /* Cells */,
 				E202C2182C2A881A004AAF83 /* MainViewController.swift */,
 				E202C21A2C2A8820004AAF83 /* MainView.swift */,
 				E202C21C2C2A8826004AAF83 /* MainViewModel.swift */,
+				E202C2312C2BEAF7004AAF83 /* AppLayouts.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -156,12 +166,22 @@
 		E202C2232C2B347E004AAF83 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				E202C22C2C2BCED0004AAF83 /* SF-Pro-Text-Bold.otf */,
 				E202C2282C2B34DC004AAF83 /* SF-Pro-Text-Regular.otf */,
 				E202C2262C2B34C4004AAF83 /* SF-Pro-Display-Regular.otf */,
 				E202C2272C2B34D1004AAF83 /* SF-Pro-Display-SemiboldItalic.otf */,
 				E202C2242C2B3496004AAF83 /* SF-Pro-Text-Semibold.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		E202C22E2C2BE8D8004AAF83 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E202C22F2C2BE92B004AAF83 /* TravelCategoryCell.swift */,
+				E202C2332C2BFA16004AAF83 /* DiscoverPlaceCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E202C2252C2B3499004AAF83 /* SF-Pro-Text-Semibold.otf in Resources */,
+				E202C22D2C2BCED3004AAF83 /* SF-Pro-Text-Bold.otf in Resources */,
 				E202C2052C2A7D24004AAF83 /* LaunchScreen.storyboard in Resources */,
 				E202C22B2C2B355E004AAF83 /* SF-Pro-Display-SemiboldItalic.otf in Resources */,
 				E202C2292C2B355A004AAF83 /* SF-Pro-Text-Regular.otf in Resources */,
@@ -300,9 +321,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E202C2342C2BFA16004AAF83 /* DiscoverPlaceCell.swift in Sources */,
 				E202C2112C2A7F2C004AAF83 /* OnboardingViewModel.swift in Sources */,
 				E202C2222C2B316A004AAF83 /* Constants.swift in Sources */,
 				E202C21B2C2A8820004AAF83 /* MainView.swift in Sources */,
+				E202C2302C2BE92B004AAF83 /* TravelCategoryCell.swift in Sources */,
 				E202C20E2C2A7EFA004AAF83 /* OnboardingModel.swift in Sources */,
 				E202C2132C2A7F34004AAF83 /* OnboardingView.swift in Sources */,
 				E202C21D2C2A8826004AAF83 /* MainViewModel.swift in Sources */,
@@ -310,6 +333,7 @@
 				E202C2152C2A7F57004AAF83 /* OnboardingViewController.swift in Sources */,
 				E202C1F92C2A7D22004AAF83 /* AppDelegate.swift in Sources */,
 				E202C1FB2C2A7D22004AAF83 /* SceneDelegate.swift in Sources */,
+				E202C2322C2BEAF7004AAF83 /* AppLayouts.swift in Sources */,
 				E202C2192C2A881A004AAF83 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
