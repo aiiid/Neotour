@@ -8,7 +8,7 @@
 import UIKit
 
 class TravelCategoryCell: UICollectionViewCell {
-    static let cellIdentifier = "TravelCategory"
+    static let reuseIdentifier = "TravelCategory"
     
     private lazy var categoryTitle: UILabel = {
         let label = UILabel()
@@ -30,7 +30,7 @@ class TravelCategoryCell: UICollectionViewCell {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.spacing = 2
-        stackView.distribution = .equalSpacing
+        stackView.distribution = .fillEqually
         return stackView
     }()
     
@@ -50,12 +50,11 @@ class TravelCategoryCell: UICollectionViewCell {
         
         addSubview(verticalStackView)
         
-        verticalStackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-        
         circleIcon.snp.makeConstraints { make in
             make.width.height.equalTo(10)
+        }
+        verticalStackView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
         }
     }
     

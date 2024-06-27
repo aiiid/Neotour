@@ -8,7 +8,6 @@
 import UIKit
 import SnapKit
 
-
 class MainView: UIView {
     var travelCollectionView: UICollectionView! = nil
     
@@ -24,22 +23,31 @@ class MainView: UIView {
 
 extension MainView {
     func configureCollectionView() {
-       let collectionView = UICollectionView(
-        frame: bounds,
-                collectionViewLayout: generateLayout()
-            )
+        let collectionView = UICollectionView(
+            frame: bounds,
+            collectionViewLayout: generateLayout()
+        )
         addSubview(collectionView)
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         collectionView.backgroundColor = .systemBackground
         
         collectionView.register(
-                TravelCategoryCell.self,
-                forCellWithReuseIdentifier: TravelCategoryCell.cellIdentifier
-            )
+            TravelCategoryCell.self,
+            forCellWithReuseIdentifier: TravelCategoryCell.reuseIdentifier
+        )
         collectionView.register(
-                DiscoverPlaceCell.self,
-                forCellWithReuseIdentifier: DiscoverPlaceCell.cellIdentifier
-            )
+            PlaceCell.self,
+            forCellWithReuseIdentifier: PlaceCell.reuseIdentifier
+        )
+        collectionView.register(
+            PlaceCell.self,
+            forCellWithReuseIdentifier: PlaceCell.reuseIdentifier
+        )
+        collectionView.register(
+            HeaderView.self,
+            forSupplementaryViewOfKind: AppLayouts.sectionHeaderElementKind,
+            withReuseIdentifier: HeaderView.reuseIdentifier)
+        
         travelCollectionView = collectionView
     }
     
@@ -51,9 +59,9 @@ extension MainView {
             case .travelCategories:
                 return AppLayouts.shared.travelCategorySection()
             case .discoverPlaces:
-                return AppLayouts.shared.discoverPlacesSection()
+                return AppLayouts.shared.discoverSection()
             case .recommendedPlaces:
-                return AppLayouts.shared.dayForecastSection()
+                return AppLayouts.shared.recommendedSection()
             }
         }
     }

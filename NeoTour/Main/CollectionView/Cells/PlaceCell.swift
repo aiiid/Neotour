@@ -7,8 +7,8 @@
 
 import UIKit
 
-class DiscoverPlaceCell: UICollectionViewCell {
-    static let cellIdentifier = "DiscoverPlace"
+class PlaceCell: UICollectionViewCell {
+    static let reuseIdentifier = "DiscoverPlace"
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()

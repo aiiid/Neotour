@@ -28,7 +28,12 @@
 		E202C22D2C2BCED3004AAF83 /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E202C22C2C2BCED0004AAF83 /* SF-Pro-Text-Bold.otf */; };
 		E202C2302C2BE92B004AAF83 /* TravelCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C22F2C2BE92B004AAF83 /* TravelCategoryCell.swift */; };
 		E202C2322C2BEAF7004AAF83 /* AppLayouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C2312C2BEAF7004AAF83 /* AppLayouts.swift */; };
-		E202C2342C2BFA16004AAF83 /* DiscoverPlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C2332C2BFA16004AAF83 /* DiscoverPlaceCell.swift */; };
+		E202C2342C2BFA16004AAF83 /* PlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C2332C2BFA16004AAF83 /* PlaceCell.swift */; };
+		E202C2362C2C32CE004AAF83 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C2352C2C32CE004AAF83 /* HeaderView.swift */; };
+		E202C23C2C2C45B9004AAF83 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C23B2C2C45B9004AAF83 /* DetailViewController.swift */; };
+		E202C23E2C2C471C004AAF83 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C23D2C2C471C004AAF83 /* DetailView.swift */; };
+		E202C2402C2C5CA6004AAF83 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C23F2C2C5CA6004AAF83 /* ReviewCell.swift */; };
+		E202C2422C2C5D61004AAF83 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C2412C2C5D61004AAF83 /* DetailModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,7 +62,12 @@
 		E202C22C2C2BCED0004AAF83 /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
 		E202C22F2C2BE92B004AAF83 /* TravelCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelCategoryCell.swift; sourceTree = "<group>"; };
 		E202C2312C2BEAF7004AAF83 /* AppLayouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLayouts.swift; sourceTree = "<group>"; };
-		E202C2332C2BFA16004AAF83 /* DiscoverPlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverPlaceCell.swift; sourceTree = "<group>"; };
+		E202C2332C2BFA16004AAF83 /* PlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCell.swift; sourceTree = "<group>"; };
+		E202C2352C2C32CE004AAF83 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		E202C23B2C2C45B9004AAF83 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		E202C23D2C2C471C004AAF83 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		E202C23F2C2C5CA6004AAF83 /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
+		E202C2412C2C5D61004AAF83 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +120,7 @@
 		E202C1F72C2A7D22004AAF83 /* NeoTour */ = {
 			isa = PBXGroup;
 			children = (
+				E202C23A2C2C45A7004AAF83 /* Details */,
 				E202C21E2C2B315A004AAF83 /* Utilities */,
 				E202C20F2C2A7EFE004AAF83 /* Onboarding */,
 				E202C2172C2A87F6004AAF83 /* Main */,
@@ -144,11 +155,10 @@
 		E202C2172C2A87F6004AAF83 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				E202C22E2C2BE8D8004AAF83 /* Cells */,
-				E202C2182C2A881A004AAF83 /* MainViewController.swift */,
+				E202C2392C2C433E004AAF83 /* CollectionView */,
 				E202C21A2C2A8820004AAF83 /* MainView.swift */,
+				E202C2182C2A881A004AAF83 /* MainViewController.swift */,
 				E202C21C2C2A8826004AAF83 /* MainViewModel.swift */,
-				E202C2312C2BEAF7004AAF83 /* AppLayouts.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -179,9 +189,30 @@
 			isa = PBXGroup;
 			children = (
 				E202C22F2C2BE92B004AAF83 /* TravelCategoryCell.swift */,
-				E202C2332C2BFA16004AAF83 /* DiscoverPlaceCell.swift */,
+				E202C2332C2BFA16004AAF83 /* PlaceCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		E202C2392C2C433E004AAF83 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				E202C2312C2BEAF7004AAF83 /* AppLayouts.swift */,
+				E202C2352C2C32CE004AAF83 /* HeaderView.swift */,
+				E202C22E2C2BE8D8004AAF83 /* Cells */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		E202C23A2C2C45A7004AAF83 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				E202C23B2C2C45B9004AAF83 /* DetailViewController.swift */,
+				E202C23D2C2C471C004AAF83 /* DetailView.swift */,
+				E202C23F2C2C5CA6004AAF83 /* ReviewCell.swift */,
+				E202C2412C2C5D61004AAF83 /* DetailModel.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,16 +352,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E202C2342C2BFA16004AAF83 /* DiscoverPlaceCell.swift in Sources */,
+				E202C2342C2BFA16004AAF83 /* PlaceCell.swift in Sources */,
 				E202C2112C2A7F2C004AAF83 /* OnboardingViewModel.swift in Sources */,
+				E202C23E2C2C471C004AAF83 /* DetailView.swift in Sources */,
 				E202C2222C2B316A004AAF83 /* Constants.swift in Sources */,
 				E202C21B2C2A8820004AAF83 /* MainView.swift in Sources */,
 				E202C2302C2BE92B004AAF83 /* TravelCategoryCell.swift in Sources */,
+				E202C2422C2C5D61004AAF83 /* DetailModel.swift in Sources */,
 				E202C20E2C2A7EFA004AAF83 /* OnboardingModel.swift in Sources */,
 				E202C2132C2A7F34004AAF83 /* OnboardingView.swift in Sources */,
 				E202C21D2C2A8826004AAF83 /* MainViewModel.swift in Sources */,
 				E202C2202C2B3164004AAF83 /* Extension.swift in Sources */,
 				E202C2152C2A7F57004AAF83 /* OnboardingViewController.swift in Sources */,
+				E202C2362C2C32CE004AAF83 /* HeaderView.swift in Sources */,
+				E202C23C2C2C45B9004AAF83 /* DetailViewController.swift in Sources */,
+				E202C2402C2C5CA6004AAF83 /* ReviewCell.swift in Sources */,
 				E202C1F92C2A7D22004AAF83 /* AppDelegate.swift in Sources */,
 				E202C1FB2C2A7D22004AAF83 /* SceneDelegate.swift in Sources */,
 				E202C2322C2BEAF7004AAF83 /* AppLayouts.swift in Sources */,
