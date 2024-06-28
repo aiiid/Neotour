@@ -19,6 +19,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         loadReviews()
         setupDataSource()
+        setupTargets()
     }
     
     private func loadReviews() {
@@ -42,6 +43,25 @@ class DetailViewController: UIViewController {
         detailView.reviewsTableView.dataSource = self
         detailView.reviewsTableView.delegate = self
     }
+    
+    private func setupTargets() {
+        detailView.bookNowButton.addTarget(self, action: #selector(bookNowTapped), for: .touchUpInside)
+    }
+    
+    @objc private func bookNowTapped() {
+        let bookingPopup = BookingPopupView(frame: view.bounds)
+        bookingPopup.submitButton.addTarget(self, action: #selector(submitBookingDetails), for: .touchUpInside)
+        view.addSubview(bookingPopup)
+    }
+    
+    @objc private func submitBookingDetails() {
+            // Handle the submission of booking details here
+            // Remove the popup view after submission
+            if let bookingPopup = view.subviews.first(where: { $0 is BookingPopupView }) {
+                bookingPopup.removeFromSuperview()
+            }
+        }
+    
 }
 
 extension DetailViewController: UITableViewDataSource, UITableViewDelegate {

@@ -117,6 +117,15 @@ class DetailView: UIView {
         return tableView
     }()
     
+    let bookNowButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Book Now", for: .normal)
+        button.backgroundColor = Constants.Colors.primaryColor
+        button.tintColor = .white
+        button.layer.cornerRadius = 25
+        return button
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -135,20 +144,9 @@ class DetailView: UIView {
     private func setupView() {
         addSubview(mainImage)
         addSubview(infoView)
+        addSubview(bookNowButton)
         
-        [locationIcon, locationText].forEach {locationStack.addArrangedSubview($0)}
-        [titleText, locationStack].forEach {titleStack.addArrangedSubview($0)}
-        [descriptionLabel, descriptionText].forEach {descriptionStack.addArrangedSubview($0)}
-        
-        descriptionText.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview()
-        }
-        
-        locationIcon.snp.makeConstraints { make in
-            make.width.height.equalTo(16)
-        }
-        
-        [titleStack, locationStack, descriptionStack, reviewsLabel, reviewsTableView].forEach { infoView.addSubview($0) }
+        setupInfoView()
         
         mainImage.snp.makeConstraints { make in
             make.top.equalToSuperview()
@@ -163,6 +161,35 @@ class DetailView: UIView {
             make.centerX.equalToSuperview()
             make.height.equalToSuperview().multipliedBy(0.7)
         }
+        
+        bookNowButton.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().offset(-20)
+            make.leading.trailing.equalToSuperview().inset(16)
+            make.height.equalTo(50)
+        }
+    }
+    
+    private func setupInfoView() {
+        [locationIcon, locationText].forEach { locationStack.addArrangedSubview($0)}
+        [titleText, locationStack].forEach { titleStack.addArrangedSubview($0)}
+        [descriptionLabel, descriptionText].forEach { descriptionStack.addArrangedSubview($0)}
+        
+        [
+            titleStack,
+            locationStack,
+            descriptionStack,
+            reviewsLabel,
+            reviewsTableView
+        ].forEach { infoView.addSubview($0) }
+        
+        descriptionText.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
+        }
+        
+        locationIcon.snp.makeConstraints { make in
+            make.width.height.equalTo(16)
+        }
+        
         
         titleStack.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(24)

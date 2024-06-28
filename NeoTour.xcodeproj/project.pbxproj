@@ -34,6 +34,7 @@
 		E202C23E2C2C471C004AAF83 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C23D2C2C471C004AAF83 /* DetailView.swift */; };
 		E202C2402C2C5CA6004AAF83 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C23F2C2C5CA6004AAF83 /* ReviewCell.swift */; };
 		E202C2422C2C5D61004AAF83 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C2412C2C5D61004AAF83 /* DetailModel.swift */; };
+		E202C2762C2EB837004AAF83 /* BookingPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C2752C2EB837004AAF83 /* BookingPopupView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		E202C23D2C2C471C004AAF83 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		E202C23F2C2C5CA6004AAF83 /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
 		E202C2412C2C5D61004AAF83 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
+		E202C2752C2EB837004AAF83 /* BookingPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingPopupView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 		E202C1F72C2A7D22004AAF83 /* NeoTour */ = {
 			isa = PBXGroup;
 			children = (
+				E202C2742C2EB7D9004AAF83 /* Popup */,
 				E202C23A2C2C45A7004AAF83 /* Details */,
 				E202C21E2C2B315A004AAF83 /* Utilities */,
 				E202C20F2C2A7EFE004AAF83 /* Onboarding */,
@@ -213,6 +216,14 @@
 				E202C2412C2C5D61004AAF83 /* DetailModel.swift */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		E202C2742C2EB7D9004AAF83 /* Popup */ = {
+			isa = PBXGroup;
+			children = (
+				E202C2752C2EB837004AAF83 /* BookingPopupView.swift */,
+			);
+			path = Popup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,6 +376,7 @@
 				E202C2202C2B3164004AAF83 /* Extension.swift in Sources */,
 				E202C2152C2A7F57004AAF83 /* OnboardingViewController.swift in Sources */,
 				E202C2362C2C32CE004AAF83 /* HeaderView.swift in Sources */,
+				E202C2762C2EB837004AAF83 /* BookingPopupView.swift in Sources */,
 				E202C23C2C2C45B9004AAF83 /* DetailViewController.swift in Sources */,
 				E202C2402C2C5CA6004AAF83 /* ReviewCell.swift in Sources */,
 				E202C1F92C2A7D22004AAF83 /* AppDelegate.swift in Sources */,
