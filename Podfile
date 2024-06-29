@@ -8,5 +8,6 @@ target 'NeoTour' do
   # Pods for NeoTour
 	pod 'SwiftLint'
 	pod 'SnapKit'
+	pod 'PhoneNumberKit', '~> 3.6'
 
 end

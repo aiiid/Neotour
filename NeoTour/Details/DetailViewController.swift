@@ -9,6 +9,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
     private let detailView = DetailView()
+    //put review to viewmodel and pick from there
     private var reviews: [Review] = []
     
     override func loadView() {
@@ -20,8 +21,9 @@ class DetailViewController: UIViewController {
         loadReviews()
         setupDataSource()
         setupTargets()
+        setupNotificationObserver()
     }
-    
+    //instead of load reviews, put it into view model
     private func loadReviews() {
         // Load your reviews here
         reviews = [
@@ -34,7 +36,7 @@ class DetailViewController: UIViewController {
                 username: "User2",
                 userImage: "person.circle",
                 review: "Amazing experience. Lorem ipsum great cuisine rlloo lalalosgd odsosl oo kkk lals fasoifhsfn nnummi lasinfoo lasnfoief klnasf o",
-                images: ["dummy1.jpg","dummy2.jpg","dummy3.jpg"]),
+                images: ["dummy1.jpg", "dummy2.jpg", "dummy3.jpg"]) ,
         ]
         detailView.reviewsTableView.reloadData()
     }
@@ -46,22 +48,34 @@ class DetailViewController: UIViewController {
     
     private func setupTargets() {
         detailView.bookNowButton.addTarget(self, action: #selector(bookNowTapped), for: .touchUpInside)
+        
+    }
+    
+    private func setupNotificationObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(showPopup), name: NSNotification.Name("BookingViewControllerDismissed"), object: nil)
+    }
+    
+    @objc private func leftButtonTapped() {
+        print("Left button tapped")
     }
     
     @objc private func bookNowTapped() {
-        let bookingPopup = BookingPopupView(frame: view.bounds)
-        bookingPopup.submitButton.addTarget(self, action: #selector(submitBookingDetails), for: .touchUpInside)
-        view.addSubview(bookingPopup)
-    }
-    
-    @objc private func submitBookingDetails() {
-            // Handle the submission of booking details here
-            // Remove the popup view after submission
-            if let bookingPopup = view.subviews.first(where: { $0 is BookingPopupView }) {
-                bookingPopup.removeFromSuperview()
-            }
+        
+        let bookingPopupVC = BookingViewController()
+        if let sheet = bookingPopupVC.sheetPresentationController {
+            sheet.detents = [.medium(), .large()] // Configure as needed
+            sheet.prefersGrabberVisible = true
         }
-    
+        present(bookingPopupVC, animated: true, completion: nil)
+    }
+    @objc private func showPopup() {
+        DispatchQueue.main.async {
+            let popUp = PopupViewController(title: "Popup", message: "This is a popup message.", buttonTitle: "Ok")
+            popUp.modalPresentationStyle = .overFullScreen
+            popUp.modalTransitionStyle = .crossDissolve
+            self.present(popUp, animated: true)
+        }
+    }
 }
 
 extension DetailViewController: UITableViewDataSource, UITableViewDelegate {

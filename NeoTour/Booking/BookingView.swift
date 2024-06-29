@@ -7,7 +7,7 @@
 import UIKit
 import SnapKit
 
-class BookingPopupView: UIView {
+class BookingView: UIView {
     
     let containerView: UIView = {
         let view = UIView()
@@ -41,14 +41,6 @@ class BookingPopupView: UIView {
         return textField
     }()
     
-    let phoneNumberTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "Phone Number"
-        textField.borderStyle = .roundedRect
-        textField.keyboardType = .phonePad
-        return textField
-    }()
-    
     let submitButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Submit", for: .normal)
@@ -58,9 +50,12 @@ class BookingPopupView: UIView {
         return button
     }()
     
+    let phoneTextField = PhoneTextField()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
+        
     }
     
     required init?(coder: NSCoder) {
@@ -68,13 +63,13 @@ class BookingPopupView: UIView {
     }
     
     private func setupView() {
-        backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        backgroundColor = .white
         addSubview(containerView)
         
         containerView.addSubview(titleLabel)
         containerView.addSubview(descriptionText)
         containerView.addSubview(nameTextField)
-        containerView.addSubview(phoneNumberTextField)
+        containerView.addSubview(phoneTextField)
         containerView.addSubview(submitButton)
         
         containerView.snp.makeConstraints { make in
@@ -84,13 +79,14 @@ class BookingPopupView: UIView {
         }
         
         titleLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview()
+            make.top.equalTo(containerView.snp.top).offset(16)
             make.leading.equalToSuperview().inset(16)
+            make.height.equalTo(20)
         }
         
         descriptionText.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(16)
-            make.top.equalTo(titleLabel.snp.bottom).offset(5)
+            make.top.equalTo(titleLabel.snp.bottom).offset(16)
         }
         
         nameTextField.snp.makeConstraints { make in
@@ -99,14 +95,14 @@ class BookingPopupView: UIView {
             make.height.equalTo(40)
         }
         
-        phoneNumberTextField.snp.makeConstraints { make in
+        phoneTextField.snp.makeConstraints { make in
             make.top.equalTo(nameTextField.snp.bottom).offset(16)
             make.leading.trailing.equalTo(containerView).inset(16)
             make.height.equalTo(40)
         }
         
         submitButton.snp.makeConstraints { make in
-            make.top.equalTo(phoneNumberTextField.snp.bottom).offset(16)
+            make.top.equalTo(phoneTextField.snp.bottom).offset(16)
             make.leading.trailing.bottom.equalTo(containerView).inset(16)
             make.height.equalTo(44)
         }

@@ -95,11 +95,8 @@ class ReviewCell: UITableViewCell {
             username.text = review.username
             reviewText.text = review.review
             
-            // Remove all arranged subviews before adding new ones
             imageStack.arrangedSubviews.forEach { $0.removeFromSuperview() }
             
-            
-            // Add images to the image stack if they exist
             if let images = review.images, !images.isEmpty {
                 verticalStack.addArrangedSubview(imageStack)
                 for imageName in images {

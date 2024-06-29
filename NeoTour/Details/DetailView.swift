@@ -190,7 +190,6 @@ class DetailView: UIView {
             make.width.height.equalTo(16)
         }
         
-        
         titleStack.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(24)
             make.width.equalToSuperview()
