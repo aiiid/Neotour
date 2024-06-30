@@ -9,6 +9,7 @@ import UIKit
 
 class HeaderView: UICollectionReusableView {
     static let reuseIdentifier = "header-reuse-identifier"
+    static let sectionHeaderElementKind = "section-header-element-kind"
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -31,7 +32,7 @@ class HeaderView: UICollectionReusableView {
         addSubview(titleLabel)
         
         titleLabel.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(16)
+            make.leading.equalToSuperview()
             make.trailing.equalToSuperview().offset(-16)
             make.top.equalToSuperview()
             make.bottom.equalToSuperview()

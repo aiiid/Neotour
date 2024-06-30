@@ -4,6 +4,7 @@
 //
 //  Created by Ai Hawok on 28/06/2024.
 //
+
 import UIKit
 import SnapKit
 
@@ -28,17 +29,10 @@ class BookingView: UIView {
     let descriptionText: UILabel = {
         let label = UILabel()
         label.text = "Lorem upsum UIConstraintBasedLayoutDebugging category on UIView listed in <UIKitCore/UIView.h> may also be helpful"
-        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.font = UIFont.boldSystemFont(ofSize: 14)
         label.textAlignment = .left
         label.numberOfLines = 0
         return label
-    }()
-    
-    let nameTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "Name"
-        textField.borderStyle = .roundedRect
-        return textField
     }()
     
     let submitButton: UIButton = {
@@ -46,16 +40,25 @@ class BookingView: UIView {
         button.setTitle("Submit", for: .normal)
         button.backgroundColor = Constants.Colors.primaryColor
         button.tintColor = .white
-        button.layer.cornerRadius = 10
+        button.layer.cornerRadius = 25
         return button
     }()
     
     let phoneTextField = PhoneTextField()
+    let commentTextField = CommentTextField()
+    let customStepper = StepperView()
+    
+    let verticalStack: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.spacing = 10
+        stackView.distribution = .fill
+        return stackView
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
-        
     }
     
     required init?(coder: NSCoder) {
@@ -63,48 +66,46 @@ class BookingView: UIView {
     }
     
     private func setupView() {
+        var edgeInset = 16
+        var interInset = 16
         backgroundColor = .white
         addSubview(containerView)
         
         containerView.addSubview(titleLabel)
-        containerView.addSubview(descriptionText)
-        containerView.addSubview(nameTextField)
-        containerView.addSubview(phoneTextField)
+        containerView.addSubview(verticalStack)
         containerView.addSubview(submitButton)
+        
+        verticalStack.addArrangedSubview(descriptionText)
+        verticalStack.addArrangedSubview(phoneTextField)
+        verticalStack.addArrangedSubview(commentTextField)
+        verticalStack.addArrangedSubview(customStepper)
         
         containerView.snp.makeConstraints { make in
             make.center.equalToSuperview()
-            make.width.equalToSuperview().multipliedBy(0.8)
+            make.width.equalToSuperview()
             make.height.equalTo(400)
         }
         
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(containerView.snp.top).offset(16)
-            make.leading.equalToSuperview().inset(16)
+            make.top.equalTo(containerView.snp.top).inset(8)
+            make.leading.equalToSuperview().inset(edgeInset)
             make.height.equalTo(20)
         }
         
-        descriptionText.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(16)
-            make.top.equalTo(titleLabel.snp.bottom).offset(16)
+        verticalStack.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom).offset(interInset)
+            make.leading.trailing.equalToSuperview().inset(edgeInset)
+            make.bottom.equalTo(submitButton.snp.top).offset(-50)
         }
         
-        nameTextField.snp.makeConstraints { make in
-            make.top.equalTo(descriptionText.snp.bottom).offset(16)
-            make.leading.trailing.equalTo(containerView).inset(16)
-            make.height.equalTo(40)
-        }
-        
-        phoneTextField.snp.makeConstraints { make in
-            make.top.equalTo(nameTextField.snp.bottom).offset(16)
-            make.leading.trailing.equalTo(containerView).inset(16)
-            make.height.equalTo(40)
+        customStepper.snp.makeConstraints { make in
+            make.width.equalTo(200)
+            make.leading.equalToSuperview()
         }
         
         submitButton.snp.makeConstraints { make in
-            make.top.equalTo(phoneTextField.snp.bottom).offset(16)
-            make.leading.trailing.bottom.equalTo(containerView).inset(16)
-            make.height.equalTo(44)
+            make.leading.trailing.bottom.equalTo(containerView).inset(edgeInset)
+            make.height.equalTo(50)
         }
     }
 }

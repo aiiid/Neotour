@@ -8,6 +8,10 @@
 import UIKit
 
 struct Constants {
+    struct UISettings{
+        static let padding: CGFloat = 16
+        static let interGroupSpacing: CGFloat = 15
+    }
     
     struct Colors {
         static let primaryColor = UIColor(hex: "#6A62B7")
@@ -20,5 +24,4 @@ struct Constants {
         static let titleFont = UIFont.systemFont(ofSize: 24, weight: .bold)
         static let bodyFont = UIFont.systemFont(ofSize: 16, weight: .regular)
     }
-    
 }

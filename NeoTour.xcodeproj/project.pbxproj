@@ -27,19 +27,23 @@
 		E202C22B2C2B355E004AAF83 /* SF-Pro-Display-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = E202C2272C2B34D1004AAF83 /* SF-Pro-Display-SemiboldItalic.otf */; };
 		E202C22D2C2BCED3004AAF83 /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E202C22C2C2BCED0004AAF83 /* SF-Pro-Text-Bold.otf */; };
 		E202C2302C2BE92B004AAF83 /* TravelCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C22F2C2BE92B004AAF83 /* TravelCategoryCell.swift */; };
-		E202C2322C2BEAF7004AAF83 /* AppLayouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C2312C2BEAF7004AAF83 /* AppLayouts.swift */; };
 		E202C2342C2BFA16004AAF83 /* PlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C2332C2BFA16004AAF83 /* PlaceCell.swift */; };
 		E202C2362C2C32CE004AAF83 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C2352C2C32CE004AAF83 /* HeaderView.swift */; };
 		E202C23C2C2C45B9004AAF83 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C23B2C2C45B9004AAF83 /* DetailViewController.swift */; };
 		E202C23E2C2C471C004AAF83 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C23D2C2C471C004AAF83 /* DetailView.swift */; };
 		E202C2402C2C5CA6004AAF83 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C23F2C2C5CA6004AAF83 /* ReviewCell.swift */; };
-		E202C2422C2C5D61004AAF83 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C2412C2C5D61004AAF83 /* DetailModel.swift */; };
+		E202C2422C2C5D61004AAF83 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C2412C2C5D61004AAF83 /* DetailViewModel.swift */; };
 		E202C2762C2EB837004AAF83 /* BookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C2752C2EB837004AAF83 /* BookingView.swift */; };
 		E202C27A2C308112004AAF83 /* PhoneTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C2792C308112004AAF83 /* PhoneTextField.swift */; };
 		E202C27C2C308A35004AAF83 /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C27B2C308A35004AAF83 /* BookingViewController.swift */; };
 		E202C27F2C3090A8004AAF83 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C27E2C3090A8004AAF83 /* PopupView.swift */; };
 		E202C2812C3091A1004AAF83 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C2802C3091A1004AAF83 /* PopupViewController.swift */; };
 		E202C2832C3094AA004AAF83 /* CountrySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C2822C3094AA004AAF83 /* CountrySelectionViewController.swift */; };
+		E202C2862C312CD1004AAF83 /* CommentTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C2852C312CD1004AAF83 /* CommentTextField.swift */; };
+		E202C2882C313402004AAF83 /* StepperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C2872C313401004AAF83 /* StepperView.swift */; };
+		E202C28A2C3143DB004AAF83 /* StepperViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C2892C3143DB004AAF83 /* StepperViewModel.swift */; };
+		E202C28F2C31479E004AAF83 /* CountriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C28E2C31479E004AAF83 /* CountriesViewModel.swift */; };
+		E202C2912C316890004AAF83 /* BookingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C2902C316890004AAF83 /* BookingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,19 +71,23 @@
 		E202C2282C2B34DC004AAF83 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
 		E202C22C2C2BCED0004AAF83 /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
 		E202C22F2C2BE92B004AAF83 /* TravelCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelCategoryCell.swift; sourceTree = "<group>"; };
-		E202C2312C2BEAF7004AAF83 /* AppLayouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLayouts.swift; sourceTree = "<group>"; };
 		E202C2332C2BFA16004AAF83 /* PlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCell.swift; sourceTree = "<group>"; };
 		E202C2352C2C32CE004AAF83 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		E202C23B2C2C45B9004AAF83 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E202C23D2C2C471C004AAF83 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		E202C23F2C2C5CA6004AAF83 /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
-		E202C2412C2C5D61004AAF83 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
+		E202C2412C2C5D61004AAF83 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		E202C2752C2EB837004AAF83 /* BookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingView.swift; sourceTree = "<group>"; };
 		E202C2792C308112004AAF83 /* PhoneTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTextField.swift; sourceTree = "<group>"; };
 		E202C27B2C308A35004AAF83 /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
 		E202C27E2C3090A8004AAF83 /* PopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
 		E202C2802C3091A1004AAF83 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		E202C2822C3094AA004AAF83 /* CountrySelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySelectionViewController.swift; sourceTree = "<group>"; };
+		E202C2852C312CD1004AAF83 /* CommentTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTextField.swift; sourceTree = "<group>"; };
+		E202C2872C313401004AAF83 /* StepperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperView.swift; sourceTree = "<group>"; };
+		E202C2892C3143DB004AAF83 /* StepperViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperViewModel.swift; sourceTree = "<group>"; };
+		E202C28E2C31479E004AAF83 /* CountriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewModel.swift; sourceTree = "<group>"; };
+		E202C2902C316890004AAF83 /* BookingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,11 +140,11 @@
 		E202C1F72C2A7D22004AAF83 /* NeoTour */ = {
 			isa = PBXGroup;
 			children = (
-				E202C2742C2EB7D9004AAF83 /* Booking */,
-				E202C23A2C2C45A7004AAF83 /* Details */,
-				E202C21E2C2B315A004AAF83 /* Utilities */,
 				E202C20F2C2A7EFE004AAF83 /* Onboarding */,
 				E202C2172C2A87F6004AAF83 /* Main */,
+				E202C23A2C2C45A7004AAF83 /* Details */,
+				E202C2742C2EB7D9004AAF83 /* Booking */,
+				E202C28C2C314707004AAF83 /* PopUp */,
 				E202C20C2C2A7EAA004AAF83 /* Support */,
 				E202C2062C2A7D24004AAF83 /* Info.plist */,
 			);
@@ -146,6 +154,7 @@
 		E202C20C2C2A7EAA004AAF83 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				E202C21E2C2B315A004AAF83 /* Utilities */,
 				E202C1F82C2A7D22004AAF83 /* AppDelegate.swift */,
 				E202C1FA2C2A7D22004AAF83 /* SceneDelegate.swift */,
 				E202C2012C2A7D24004AAF83 /* Assets.xcassets */,
@@ -210,7 +219,6 @@
 		E202C2392C2C433E004AAF83 /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				E202C2312C2BEAF7004AAF83 /* AppLayouts.swift */,
 				E202C2352C2C32CE004AAF83 /* HeaderView.swift */,
 				E202C22E2C2BE8D8004AAF83 /* Cells */,
 			);
@@ -223,7 +231,7 @@
 				E202C23B2C2C45B9004AAF83 /* DetailViewController.swift */,
 				E202C23D2C2C471C004AAF83 /* DetailView.swift */,
 				E202C23F2C2C5CA6004AAF83 /* ReviewCell.swift */,
-				E202C2412C2C5D61004AAF83 /* DetailModel.swift */,
+				E202C2412C2C5D61004AAF83 /* DetailViewModel.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -234,8 +242,6 @@
 				E202C27D2C308A61004AAF83 /* Custom */,
 				E202C2752C2EB837004AAF83 /* BookingView.swift */,
 				E202C27B2C308A35004AAF83 /* BookingViewController.swift */,
-				E202C27E2C3090A8004AAF83 /* PopupView.swift */,
-				E202C2802C3091A1004AAF83 /* PopupViewController.swift */,
 			);
 			path = Booking;
 			sourceTree = "<group>";
@@ -243,10 +249,48 @@
 		E202C27D2C308A61004AAF83 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				E202C2792C308112004AAF83 /* PhoneTextField.swift */,
-				E202C2822C3094AA004AAF83 /* CountrySelectionViewController.swift */,
+				E202C28D2C314789004AAF83 /* CountrySelection */,
+				E202C28B2C31469C004AAF83 /* Stepper */,
+				E202C2842C312CBA004AAF83 /* TextField */,
+				E202C2902C316890004AAF83 /* BookingViewModel.swift */,
 			);
 			path = Custom;
+			sourceTree = "<group>";
+		};
+		E202C2842C312CBA004AAF83 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				E202C2792C308112004AAF83 /* PhoneTextField.swift */,
+				E202C2852C312CD1004AAF83 /* CommentTextField.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		E202C28B2C31469C004AAF83 /* Stepper */ = {
+			isa = PBXGroup;
+			children = (
+				E202C2872C313401004AAF83 /* StepperView.swift */,
+				E202C2892C3143DB004AAF83 /* StepperViewModel.swift */,
+			);
+			path = Stepper;
+			sourceTree = "<group>";
+		};
+		E202C28C2C314707004AAF83 /* PopUp */ = {
+			isa = PBXGroup;
+			children = (
+				E202C27E2C3090A8004AAF83 /* PopupView.swift */,
+				E202C2802C3091A1004AAF83 /* PopupViewController.swift */,
+			);
+			path = PopUp;
+			sourceTree = "<group>";
+		};
+		E202C28D2C314789004AAF83 /* CountrySelection */ = {
+			isa = PBXGroup;
+			children = (
+				E202C2822C3094AA004AAF83 /* CountrySelectionViewController.swift */,
+				E202C28E2C31479E004AAF83 /* CountriesViewModel.swift */,
+			);
+			path = CountrySelection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,21 +437,25 @@
 				E202C21B2C2A8820004AAF83 /* MainView.swift in Sources */,
 				E202C27A2C308112004AAF83 /* PhoneTextField.swift in Sources */,
 				E202C2302C2BE92B004AAF83 /* TravelCategoryCell.swift in Sources */,
-				E202C2422C2C5D61004AAF83 /* DetailModel.swift in Sources */,
+				E202C2422C2C5D61004AAF83 /* DetailViewModel.swift in Sources */,
+				E202C28A2C3143DB004AAF83 /* StepperViewModel.swift in Sources */,
+				E202C2882C313402004AAF83 /* StepperView.swift in Sources */,
 				E202C20E2C2A7EFA004AAF83 /* OnboardingModel.swift in Sources */,
 				E202C2132C2A7F34004AAF83 /* OnboardingView.swift in Sources */,
 				E202C21D2C2A8826004AAF83 /* MainViewModel.swift in Sources */,
 				E202C2202C2B3164004AAF83 /* Extension.swift in Sources */,
 				E202C2152C2A7F57004AAF83 /* OnboardingViewController.swift in Sources */,
+				E202C2912C316890004AAF83 /* BookingViewModel.swift in Sources */,
 				E202C2362C2C32CE004AAF83 /* HeaderView.swift in Sources */,
+				E202C2862C312CD1004AAF83 /* CommentTextField.swift in Sources */,
 				E202C2762C2EB837004AAF83 /* BookingView.swift in Sources */,
 				E202C23C2C2C45B9004AAF83 /* DetailViewController.swift in Sources */,
 				E202C2832C3094AA004AAF83 /* CountrySelectionViewController.swift in Sources */,
 				E202C2402C2C5CA6004AAF83 /* ReviewCell.swift in Sources */,
 				E202C1F92C2A7D22004AAF83 /* AppDelegate.swift in Sources */,
 				E202C27C2C308A35004AAF83 /* BookingViewController.swift in Sources */,
+				E202C28F2C31479E004AAF83 /* CountriesViewModel.swift in Sources */,
 				E202C1FB2C2A7D22004AAF83 /* SceneDelegate.swift in Sources */,
-				E202C2322C2BEAF7004AAF83 /* AppLayouts.swift in Sources */,
 				E202C27F2C3090A8004AAF83 /* PopupView.swift in Sources */,
 				E202C2192C2A881A004AAF83 /* MainViewController.swift in Sources */,
 				E202C2812C3091A1004AAF83 /* PopupViewController.swift in Sources */,

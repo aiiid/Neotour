@@ -13,8 +13,8 @@ class OnboardingView: UIView {
         var configuration = UIButton.Configuration.filled()
         configuration.title = "Let's go"
         
-        if let originalImage = UIImage(named: "arrowRight.png") {
-            let size = CGSize(width: 37, height: 16)
+        if let originalImage = UIImage(named: "arrowIcon") {
+            let size = CGSize(width: 37, height: 40)
             let renderer = UIGraphicsImageRenderer(size: size)
             let resizedImage = renderer.image { _ in
                 originalImage.draw(in: CGRect(origin: .zero, size: size))
@@ -45,22 +45,13 @@ class OnboardingView: UIView {
     
     let descriptionText: UILabel = {
         let text = UILabel()
-        let strokeTextAttributes: [NSAttributedString.Key: Any] = [
-            .strokeColor: Constants.Colors.primaryColor,
-            .foregroundColor: UIColor.white,
-            .strokeWidth: -3.0,
-            .font: UIFont(name: "SFProDisplay-SemiboldItalic", size: 16) as Any
-        ]
-        
-        text.attributedText = NSAttributedString(
-            string: """
+        text.font = UIFont(name: "SFProDisplay-Semibold", size: 16)
+        text.textColor = .label
+        text.text = """
                     Enjoy your winter vacations with warmth
                     and amazing sightseeing on the mountains.
                     Enjoy the best experience with us!
-                    """,
-            attributes: strokeTextAttributes
-        )
-        
+                    """
         text.numberOfLines = 0
         text.translatesAutoresizingMaskIntoConstraints = false
         return text
@@ -107,7 +98,7 @@ class OnboardingView: UIView {
         descriptionText.snp.makeConstraints { make in
             make.top.equalTo(titleText.snp.bottom).offset(12)
             make.leading.equalToSuperview().offset(16)
-            make.trailing.equalToSuperview().offset(-50)
+            make.trailing.equalToSuperview().offset(-25)
         }
         
         letsGoButton.snp.makeConstraints { make in

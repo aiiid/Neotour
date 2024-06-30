@@ -64,8 +64,8 @@ class PlaceCell: UICollectionViewCell {
         }
     }
     
-    public func configure(with image: UIImage, title: String) {
-           imageView.image = image
-           titleLabel.text = title
+    public func configure(with place: PlaceModel) {
+        imageView.image = UIImage(named: place.image)
+        titleLabel.text = place.title
        }
 }

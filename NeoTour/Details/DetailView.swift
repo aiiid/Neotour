@@ -9,11 +9,9 @@ import UIKit
 import SnapKit
 
 class DetailView: UIView {
-    private let scrollView = UIScrollView()
-    private let contentView = UIView()
     
     let mainImage: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "onboardingImage.png"))
+        let imageView = UIImageView()
         imageView.layer.cornerRadius = 25
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
@@ -30,7 +28,6 @@ class DetailView: UIView {
     let titleText: UILabel = {
         let text = UILabel()
         text.font = UIFont(name: "SFProText-Bold", size: 24)
-        text.text = "Mount Fuji"
         text.numberOfLines = 0
         text.translatesAutoresizingMaskIntoConstraints = false
         return text
@@ -65,12 +62,6 @@ class DetailView: UIView {
     let descriptionText: UILabel = {
         let text = UILabel()
         text.font = UIFont(name: "SFProDisplay-Regular", size: 16)
-        text.text = """
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Dignissim eget amet viverra eget fames rhoncus.
-        Eget enim venenatis enim porta egestas malesuada et.
-        Consequat mauris lacus euismod montes.
-        """
         text.numberOfLines = 0
         text.translatesAutoresizingMaskIntoConstraints = false
         return text
@@ -141,6 +132,13 @@ class DetailView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func set(location: Location) {
+        mainImage.image = UIImage(named: location.mainImage)
+        titleText.text = location.title
+        descriptionText.text = location.description
+        locationText.text = location.location
+    }
+    
     private func setupView() {
         addSubview(mainImage)
         addSubview(infoView)
@@ -163,7 +161,7 @@ class DetailView: UIView {
         }
         
         bookNowButton.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().offset(-20)
+            make.bottom.equalToSuperview().offset(-40)
             make.leading.trailing.equalToSuperview().inset(16)
             make.height.equalTo(50)
         }

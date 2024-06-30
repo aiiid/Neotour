@@ -91,9 +91,9 @@ class ReviewCell: UITableViewCell {
         }
         
         public func configure(with review: Review) {
-            profileImage.image = UIImage(systemName: review.userImage)
-            username.text = review.username
-            reviewText.text = review.review
+            profileImage.image = UIImage(systemName: review.user.userImage)
+            username.text = review.user.username
+            reviewText.text = review.textReview
             
             imageStack.arrangedSubviews.forEach { $0.removeFromSuperview() }
             

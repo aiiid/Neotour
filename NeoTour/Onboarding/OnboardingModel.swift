@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct User {
+struct AdminUser {
     var hasCompletedOnboarding: Bool
 }
