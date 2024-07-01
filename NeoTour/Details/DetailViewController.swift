@@ -9,16 +9,18 @@ import UIKit
 
 class DetailViewController: UIViewController {
     private let detailView = DetailView()
-    private let viewModel: MainViewModel
+    //    private let viewModel: MainViewModel
+    private let tour: TourModel
     
     override func loadView() {
         view = detailView
     }
     
-    init(viewModel: MainViewModel) {
-            self.viewModel = viewModel
-            super.init(nibName: nil, bundle: nil)
-        }
+    init(tour: TourModel) {
+        //            self.viewModel = viewModel
+        self.tour = tour
+        super.init(nibName: nil, bundle: nil)
+    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -33,7 +35,7 @@ class DetailViewController: UIViewController {
     }
     private func loadContent() {
         detailView.reviewsTableView.reloadData()
-        detailView.set(tour: viewModel.tourArray[0])
+        detailView.set(tour: tour)
     }
     
     private func setupDataSource() {
@@ -49,15 +51,10 @@ class DetailViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(showPopup), name: NSNotification.Name("BookingViewControllerDismissed"), object: nil)
     }
     
-    @objc private func leftButtonTapped() {
-        print("Left button tapped")
-    }
-    
     @objc private func bookNowTapped() {
-        
-        let bookingPopupVC = BookingViewController()
+        let bookingPopupVC = BookingViewController(tour: tour)
         if let sheet = bookingPopupVC.sheetPresentationController {
-            sheet.detents = [.medium(), .large()] // Configure as needed
+            sheet.detents = [.medium(), .large()]
             sheet.prefersGrabberVisible = true
         }
         present(bookingPopupVC, animated: true, completion: nil)
@@ -74,14 +71,14 @@ class DetailViewController: UIViewController {
 
 extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.tourArray[0].reviews.count
+        return tour.reviews.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ReviewCell.reuseIdentifier, for: indexPath) as? ReviewCell else {
             return UITableViewCell()
         }
-        let review = viewModel.tourArray[0].reviews[indexPath.row]
+        let review = tour.reviews[indexPath.row]
         cell.configure(with: review)
         return cell
     }

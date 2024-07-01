@@ -28,7 +28,7 @@ class BookingView: UIView {
     
     let descriptionText: UILabel = {
         let label = UILabel()
-        label.text = "Lorem upsum UIConstraintBasedLayoutDebugging category on UIView listed in <UIKitCore/UIView.h> may also be helpful"
+        label.text = "To submit an application for a tour reservation, you need to fill in your information and select the number of people for the reservation"
         label.font = UIFont.boldSystemFont(ofSize: 14)
         label.textAlignment = .left
         label.numberOfLines = 0

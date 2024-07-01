@@ -12,7 +12,7 @@ class ReviewCell: UITableViewCell {
     static let reuseIdentifier = "ReviewCell"
     
     private let profileImage: UIImageView = {
-        let imageView = UIImageView()
+        let imageView = UIImageView(image: UIImage(systemName: "person"))
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 10
@@ -36,13 +36,12 @@ class ReviewCell: UITableViewCell {
         return label
     }()
     
-    private let imageStack: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.spacing = 8
-        stackView.alignment = .fill
-        stackView.distribution = .fillEqually
-        return stackView
+    private let reviewImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 10
+        return imageView
     }()
     
     private let verticalStack: UIStackView = {
@@ -92,34 +91,31 @@ class ReviewCell: UITableViewCell {
     }
     
     public func configure(with review: Review) {
-        if let imageURL = URL(string: review.reviewerPhoto) {
-            profileImage.sd_setImage(with: imageURL, completed: nil)
-        } else {
-            profileImage.image = UIImage(systemName: "person")
+            username.text = review.reviewerName
+            reviewText.text = review.reviewText
+        
+            
+            if let reviewImageURL = URL(string: review.reviewerPhoto) {
+                reviewImage.sd_setImage(with: reviewImageURL) {
+                    [weak self] image,
+                    error,
+                    cacheType,
+                    url in
+                    guard let self = self else { return }
+                    if let _ = image {
+                        self.verticalStack.addArrangedSubview(self.reviewImage)
+                        
+                        self.reviewImage.snp.makeConstraints { make in
+                            make.top.equalTo(self.reviewText.snp.bottom).offset(10)
+                            make.leading.trailing.equalToSuperview()
+                            make.height.equalTo(110)
+                        }
+                    } else {
+                        print("Failed to load image: \(error?.localizedDescription ?? "unknown error")")
+                    }
+                }
+            } else {
+                print("Invalid image URL")
+            }
         }
-
-        username.text = review.reviewerName
-        reviewText.text = review.reviewText
-        
-        imageStack.arrangedSubviews.forEach { $0.removeFromSuperview() }
-        
-//        if let images = review., !images.isEmpty {
-//            verticalStack.addArrangedSubview(imageStack)
-//            for imageName in images {
-//                let imageView = UIImageView()
-//                imageView.contentMode = .scaleAspectFill
-//                imageView.clipsToBounds = true
-//                imageView.layer.cornerRadius = 5
-//                imageView.image = UIImage(named: imageName)
-//                
-//                imageView.snp.makeConstraints { make in
-//                    make.width.height.equalTo(100)
-//                }
-//                
-//                imageStack.addArrangedSubview(imageView)
-//            }
-//        } else {
-//            imageStack.removeFromSuperview()
-//        }
-    }
 }

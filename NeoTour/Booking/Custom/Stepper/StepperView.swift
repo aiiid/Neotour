@@ -47,7 +47,7 @@ class StepperView: UIView {
         return button
     }()
     
-    private let valueLabel: UILabel = {
+    let valueLabel: UILabel = {
         let label = UILabel()
         label.text = "1"
         label.textAlignment = .center

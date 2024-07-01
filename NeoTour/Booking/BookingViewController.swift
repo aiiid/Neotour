@@ -11,19 +11,30 @@ class BookingViewController: UIViewController {
     private let bookingView = BookingView()
     private let stepperViewModel = StepperViewModel()
     private let bookingViewModel = BookingViewModel()
+    private let tour: TourModel
     private var cancellables: Set<AnyCancellable> = []
+
+    init(tour: TourModel) {
+        self.tour = tour
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func loadView() {
         view = bookingView
         bookingView.customStepper.viewModel = stepperViewModel
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTargets()
         bindViewModel()
+        configureStepper()
     }
-    
+
     private func setupTargets() {
         bookingView.phoneTextField.leftButton.addTarget(self, action: #selector(flagTapped), for: .touchUpInside)
         bookingView.submitButton.addTarget(self, action: #selector(submitTapped), for: .touchUpInside)
@@ -33,7 +44,7 @@ class BookingViewController: UIViewController {
         bookingView.phoneTextField.textField.addTarget(self, action: #selector(phoneNumberChanged(_:)), for: .editingChanged)
         bookingView.commentTextField.textField.addTarget(self, action: #selector(commentChanged(_:)), for: .editingChanged)
     }
-    
+
     private func bindViewModel() {
         bookingViewModel.isFormValid
             .receive(on: RunLoop.main)
@@ -43,15 +54,24 @@ class BookingViewController: UIViewController {
             }
             .store(in: &cancellables)
     }
-    
+
+    private func configureStepper() {
+        stepperViewModel.value = 1
+        stepperViewModel.maxValue = tour.bookingLimit
+        stepperViewModel.onValueChange = { [weak self] value in
+            self?.bookingView.customStepper.valueLabel.text = "\(value)"
+        }
+        bookingView.customStepper.viewModel = stepperViewModel
+    }
+
     @objc private func phoneNumberChanged(_ textField: UITextField) {
         bookingViewModel.phoneNumber = textField.text ?? ""
     }
-    
+
     @objc private func commentChanged(_ textField: UITextField) {
         bookingViewModel.comment = textField.text ?? ""
     }
-    
+
     @objc private func flagTapped() {
         let countrySelectionVC = CountrySelectionViewController()
         countrySelectionVC.didSelectCountry = { [weak self] country in
@@ -69,17 +89,26 @@ class BookingViewController: UIViewController {
         
         present(countrySelectionVC, animated: true, completion: nil)
     }
-    
+
     @objc private func submitTapped() {
-        dismiss(animated: true) {
-            NotificationCenter.default.post(name: NSNotification.Name("BookingViewControllerDismissed"), object: nil)
+        bookingViewModel.createBooking(tourId: tour.id) { [weak self] result in
+            switch result {
+            case .success(let response):
+                print("Booking successful: \(response)")
+                self?.dismiss(animated: true) {
+                    NotificationCenter.default.post(name: NSNotification.Name("BookingViewControllerDismissed"), object: nil)
+                }
+            case .failure(let error):
+                print("Booking failed: \(error.localizedDescription)")
+                // Handle error, possibly showing an alert to the user
+            }
         }
     }
 
     @objc private func decrementValue() {
         stepperViewModel.decrement()
     }
-    
+
     @objc private func incrementValue() {
         stepperViewModel.increment()
     }

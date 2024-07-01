@@ -63,8 +63,8 @@ struct PlaceModel {
     let image: String
 }
 
-
 class MainViewModel {
+    
     var tourArray: [TourModel] = []
     var discoveryArray: [TourModel] = []
     var recommendationArray: [TourModel] = []

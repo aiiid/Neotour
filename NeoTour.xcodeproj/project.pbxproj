@@ -32,7 +32,6 @@
 		E202C23C2C2C45B9004AAF83 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C23B2C2C45B9004AAF83 /* DetailViewController.swift */; };
 		E202C23E2C2C471C004AAF83 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C23D2C2C471C004AAF83 /* DetailView.swift */; };
 		E202C2402C2C5CA6004AAF83 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C23F2C2C5CA6004AAF83 /* ReviewCell.swift */; };
-		E202C2422C2C5D61004AAF83 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C2412C2C5D61004AAF83 /* DetailViewModel.swift */; };
 		E202C2762C2EB837004AAF83 /* BookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C2752C2EB837004AAF83 /* BookingView.swift */; };
 		E202C27A2C308112004AAF83 /* PhoneTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C2792C308112004AAF83 /* PhoneTextField.swift */; };
 		E202C27C2C308A35004AAF83 /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C27B2C308A35004AAF83 /* BookingViewController.swift */; };
@@ -77,7 +76,6 @@
 		E202C23B2C2C45B9004AAF83 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E202C23D2C2C471C004AAF83 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		E202C23F2C2C5CA6004AAF83 /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
-		E202C2412C2C5D61004AAF83 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		E202C2752C2EB837004AAF83 /* BookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingView.swift; sourceTree = "<group>"; };
 		E202C2792C308112004AAF83 /* PhoneTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTextField.swift; sourceTree = "<group>"; };
 		E202C27B2C308A35004AAF83 /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
@@ -234,7 +232,6 @@
 				E202C23B2C2C45B9004AAF83 /* DetailViewController.swift */,
 				E202C23D2C2C471C004AAF83 /* DetailView.swift */,
 				E202C23F2C2C5CA6004AAF83 /* ReviewCell.swift */,
-				E202C2412C2C5D61004AAF83 /* DetailViewModel.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -448,7 +445,6 @@
 				E202C21B2C2A8820004AAF83 /* MainView.swift in Sources */,
 				E202C27A2C308112004AAF83 /* PhoneTextField.swift in Sources */,
 				E202C2302C2BE92B004AAF83 /* TravelCategoryCell.swift in Sources */,
-				E202C2422C2C5D61004AAF83 /* DetailViewModel.swift in Sources */,
 				E202C28A2C3143DB004AAF83 /* StepperViewModel.swift in Sources */,
 				E202C2882C313402004AAF83 /* StepperView.swift in Sources */,
 				E202C20E2C2A7EFA004AAF83 /* OnboardingModel.swift in Sources */,

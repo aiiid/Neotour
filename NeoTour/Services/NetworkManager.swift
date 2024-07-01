@@ -42,6 +42,9 @@ class NetworkManager {
                 let decodedObject = try JSONDecoder().decode(responseType, from: data)
                 completion(.success(decodedObject))
             } catch let decodingError {
+                // Print the received data and decoding error for debugging
+                print("Failed to decode response: \(decodingError)")
+                print("Response data: \(String(data: data, encoding: .utf8) ?? "N/A")")
                 completion(.failure(decodingError))
             }
         }.resume()
@@ -81,6 +84,9 @@ class NetworkManager {
                 let decodedObject = try JSONDecoder().decode(responseType, from: data)
                 completion(.success(decodedObject))
             } catch let decodingError {
+                // Print the received data and decoding error for debugging
+                print("Failed to decode response: \(decodingError)")
+                print("Response data: \(String(data: data, encoding: .utf8) ?? "N/A")")
                 completion(.failure(decodingError))
             }
         }.resume()

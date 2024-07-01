@@ -14,10 +14,11 @@ class StepperViewModel {
         }
     }
     
+    var maxValue: Int = 5
     var onValueChange: ((Int) -> Void)?
     
     func increment() {
-        if value < 5 {
+        if value < maxValue {
             value += 1
         }
     }

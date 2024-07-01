@@ -19,6 +19,13 @@ class DetailView: UIView {
         return imageView
     }()
     
+    let gradientLayer: CAGradientLayer = {
+            let layer = CAGradientLayer()
+            layer.colors = [UIColor.black.withAlphaComponent(0.7).cgColor, UIColor.clear.cgColor]
+            layer.locations = [0.0, 1.0]
+            return layer
+        }()
+    
     let infoView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 25
@@ -147,6 +154,7 @@ class DetailView: UIView {
     
     private func setupView() {
         addSubview(mainImage)
+        mainImage.layer.addSublayer(gradientLayer)
         addSubview(infoView)
         addSubview(bookNowButton)
         
@@ -158,6 +166,13 @@ class DetailView: UIView {
             make.height.equalToSuperview().multipliedBy(0.6)
             make.centerX.equalToSuperview()
         }
+        
+        gradientLayer.frame = CGRect(
+            x: 0,
+            y: 0,
+            width: UIScreen.main.bounds.width,
+            height: UIScreen.main.bounds.height * 0.2
+        )
         
         infoView.snp.makeConstraints { make in
             make.bottom.equalToSuperview()

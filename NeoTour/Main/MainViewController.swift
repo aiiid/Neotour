@@ -147,7 +147,8 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
                 }
             }
         case .discoverPlaces, .recommendedPlaces:
-            let detailVC = DetailViewController(viewModel: viewModel)
+            let tour = viewModel.tourArray[indexPath.row]
+            let detailVC = DetailViewController(tour: tour)
             navigationController?.pushViewController(detailVC, animated: true)
         }
     }
