@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import SDWebImage
 
 class DetailView: UIView {
     
@@ -132,11 +133,16 @@ class DetailView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func set(location: Location) {
-        mainImage.image = UIImage(named: location.mainImage)
-        titleText.text = location.title
-        descriptionText.text = location.description
-        locationText.text = location.location
+    func set(tour: TourModel) {
+        titleText.text = tour.name
+        descriptionText.text = tour.description
+        locationText.text = tour.location
+        
+        if let imageURL = URL(string: tour.thumbnail) {
+            mainImage.sd_setImage(with: imageURL, completed: nil)
+        } else {
+            mainImage.image = nil // Set a placeholder image if needed
+        }
     }
     
     private func setupView() {

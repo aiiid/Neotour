@@ -4,7 +4,6 @@
 //
 //  Created by Ai Hawok on 25/06/2024.
 //
-
 import UIKit
 
 class MainViewController: UIViewController {
@@ -17,8 +16,10 @@ class MainViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         setupNavBar()
         setupDataSource()
+        fetchInitialData()
     }
     
     func setupNavBar() {
@@ -35,20 +36,35 @@ class MainViewController: UIViewController {
         contentView.travelCollectionView.reloadData()
     }
     
+    private func fetchInitialData() {
+        viewModel.fetchTours(by: .popular) { [weak self] result in
+            switch result {
+            case .success(let tours):
+                DispatchQueue.main.async {
+                    print("fetched")
+                    print(tours)
+                    self?.contentView.travelCollectionView.reloadData()
+                }
+            case .failure(let error):
+                print("Failed to fetch tours: \(error.localizedDescription)")
+            }
+        }
+    }
 }
 
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return Section.allCases.count
     }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch Section.allCases[section] {
         case .travelCategories:
-            return viewModel.tourArray.count
+            return viewModel.categories.count
         case .discoverPlaces:
-            return viewModel.discoveryArray.count
+            return viewModel.tourArray.count
         case .recommendedPlaces:
-            return viewModel.recommendationArray.count
+            return viewModel.tourArray.count
         }
     }
     
@@ -78,7 +94,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
                 return UICollectionViewCell()
             }
             
-            let tour = viewModel.discoveryArray[indexPath.row]
+            let tour = viewModel.tourArray[indexPath.row]
             cell.configure(with: tour)
             
             return cell
@@ -91,8 +107,8 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
                 return UICollectionViewCell()
             }
             
-            let place = viewModel.recommendationArray[indexPath.row]
-            cell.configure(with: place)
+            let tour = viewModel.tourArray[indexPath.row]
+            cell.configure(with: tour)
             
             return cell
         }
@@ -118,8 +134,20 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
                 selectedCategoryIndex = indexPath
                 collectionView.reloadItems(at: [indexPath])
             }
+            let selectedCategory = viewModel.categories[indexPath.row]
+            viewModel.fetchTours(by: selectedCategory) { [weak self] result in
+                switch result {
+                case .success(let tours):
+                    DispatchQueue.main.async {
+                        self?.viewModel.tourArray = tours
+                        self?.contentView.travelCollectionView.reloadData()
+                    }
+                case .failure(let error):
+                    print("Failed to fetch tours: \(error.localizedDescription)")
+                }
+            }
         case .discoverPlaces, .recommendedPlaces:
-            let detailVC = DetailViewController()
+            let detailVC = DetailViewController(viewModel: viewModel)
             navigationController?.pushViewController(detailVC, animated: true)
         }
     }

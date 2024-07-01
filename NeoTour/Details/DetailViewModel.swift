@@ -7,19 +7,7 @@
 
 import UIKit
 
-struct Review: Codable {
-    let tour: String
-    let reviewerName: String
-    let reviewerPhoto: String
-    let reviewText: String
 
-    enum CodingKeys: String, CodingKey {
-        case tour
-        case reviewerName = "reviewer_name"
-        case reviewerPhoto = "reviewer_photo"
-        case reviewText = "review_text"
-    }
-}
 
 struct User {
     var username: String
@@ -34,14 +22,14 @@ struct Location {
 }
 
 class DetailViewModel {
-    var reviews = [
-        Review(user: User(username: "User1", userImage: "person.circle"),
-               textReview: "Great place!"),
-        Review(user: User(username: "User2", userImage: "person.circle"),
-               textReview: "Amazing experience. Lorem ipsum great cuisine rlloo lalalosgd odsosl oo kkk lals fasoifhsfn nnummi lasinfoo lasnfoief klnasf o",
-               images: ["dummy1.jpg", "dummy2.jpg", "dummy3.jpg"])
-    ]
-    
+//    var reviews = [
+//        Review(user: User(username: "User1", userImage: "person.circle"),
+//               textReview: "Great place!"),
+//        Review(user: User(username: "User2", userImage: "person.circle"),
+//               textReview: "Amazing experience. Lorem ipsum great cuisine rlloo lalalosgd odsosl oo kkk lals fasoifhsfn nnummi lasinfoo lasnfoief klnasf o",
+//               images: ["dummy1.jpg", "dummy2.jpg", "dummy3.jpg"])
+//    ]
+//    
     var location = Location(
         mainImage: "onboardingImage.png",
         title: "Mount Fuji",

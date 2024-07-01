@@ -9,5 +9,6 @@ target 'NeoTour' do
 	pod 'SwiftLint'
 	pod 'SnapKit'
 	pod 'PhoneNumberKit', '~> 3.6'
+	pod 'SDWebImage'
 
 end

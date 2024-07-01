@@ -5,6 +5,7 @@
 //  Created by Ai Hawok on 26/06/2024.
 //
 
+import SDWebImage
 import UIKit
 
 class PlaceCell: UICollectionViewCell {
@@ -65,7 +66,11 @@ class PlaceCell: UICollectionViewCell {
     }
     
     public func configure(with tour: TourModel) {
-        imageView.image = UIImage(named: place.image)
         titleLabel.text = tour.name
-       }
+        if let imageURL = URL(string: tour.thumbnail) {
+            imageView.sd_setImage(with: imageURL, completed: nil)
+        } else {
+            imageView.image = nil // Set a placeholder image if needed
+        }
+    }
 }

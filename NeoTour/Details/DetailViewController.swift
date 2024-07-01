@@ -9,10 +9,19 @@ import UIKit
 
 class DetailViewController: UIViewController {
     private let detailView = DetailView()
-    private let viewModel = DetailViewModel()
+    private let viewModel: MainViewModel
     
     override func loadView() {
         view = detailView
+    }
+    
+    init(viewModel: MainViewModel) {
+            self.viewModel = viewModel
+            super.init(nibName: nil, bundle: nil)
+        }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
@@ -24,7 +33,7 @@ class DetailViewController: UIViewController {
     }
     private func loadContent() {
         detailView.reviewsTableView.reloadData()
-        detailView.set(location: viewModel.location)
+        detailView.set(tour: viewModel.tourArray[0])
     }
     
     private func setupDataSource() {
@@ -65,14 +74,14 @@ class DetailViewController: UIViewController {
 
 extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.reviews.count
+        return viewModel.tourArray[0].reviews.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ReviewCell.reuseIdentifier, for: indexPath) as? ReviewCell else {
             return UITableViewCell()
         }
-        let review = viewModel.reviews[indexPath.row]
+        let review = viewModel.tourArray[0].reviews[indexPath.row]
         cell.configure(with: review)
         return cell
     }

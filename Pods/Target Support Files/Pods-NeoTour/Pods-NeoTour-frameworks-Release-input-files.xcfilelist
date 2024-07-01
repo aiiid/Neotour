@@ -1,3 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-NeoTour/Pods-NeoTour-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/PhoneNumberKit/PhoneNumberKit.framework
+${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
 ${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework
