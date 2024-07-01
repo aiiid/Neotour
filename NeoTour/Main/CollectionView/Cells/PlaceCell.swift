@@ -64,8 +64,8 @@ class PlaceCell: UICollectionViewCell {
         }
     }
     
-    public func configure(with place: PlaceModel) {
+    public func configure(with tour: TourModel) {
         imageView.image = UIImage(named: place.image)
-        titleLabel.text = place.title
+        titleLabel.text = tour.name
        }
 }

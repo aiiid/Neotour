@@ -44,6 +44,7 @@
 		E202C28A2C3143DB004AAF83 /* StepperViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C2892C3143DB004AAF83 /* StepperViewModel.swift */; };
 		E202C28F2C31479E004AAF83 /* CountriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C28E2C31479E004AAF83 /* CountriesViewModel.swift */; };
 		E202C2912C316890004AAF83 /* BookingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C2902C316890004AAF83 /* BookingViewModel.swift */; };
+		E202C2942C32C5FE004AAF83 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C2932C32C5FE004AAF83 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		E202C2892C3143DB004AAF83 /* StepperViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperViewModel.swift; sourceTree = "<group>"; };
 		E202C28E2C31479E004AAF83 /* CountriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewModel.swift; sourceTree = "<group>"; };
 		E202C2902C316890004AAF83 /* BookingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewModel.swift; sourceTree = "<group>"; };
+		E202C2932C32C5FE004AAF83 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 		E202C1F72C2A7D22004AAF83 /* NeoTour */ = {
 			isa = PBXGroup;
 			children = (
+				E202C2922C32C5F2004AAF83 /* Services */,
 				E202C20F2C2A7EFE004AAF83 /* Onboarding */,
 				E202C2172C2A87F6004AAF83 /* Main */,
 				E202C23A2C2C45A7004AAF83 /* Details */,
@@ -293,6 +296,14 @@
 			path = CountrySelection;
 			sourceTree = "<group>";
 		};
+		E202C2922C32C5F2004AAF83 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E202C2932C32C5FE004AAF83 /* NetworkManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -442,6 +453,7 @@
 				E202C2882C313402004AAF83 /* StepperView.swift in Sources */,
 				E202C20E2C2A7EFA004AAF83 /* OnboardingModel.swift in Sources */,
 				E202C2132C2A7F34004AAF83 /* OnboardingView.swift in Sources */,
+				E202C2942C32C5FE004AAF83 /* NetworkManager.swift in Sources */,
 				E202C21D2C2A8826004AAF83 /* MainViewModel.swift in Sources */,
 				E202C2202C2B3164004AAF83 /* Extension.swift in Sources */,
 				E202C2152C2A7F57004AAF83 /* OnboardingViewController.swift in Sources */,

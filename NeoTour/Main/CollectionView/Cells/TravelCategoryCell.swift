@@ -72,8 +72,8 @@ class TravelCategoryCell: UICollectionViewCell {
         }
     }
     
-    func set(tour: TourModel, isSelected: Bool) {
-        categoryTitle.text = tour.title
+    func set(category: String, isSelected: Bool) {
+        categoryTitle.text = category
         setCircleVisibility(isSelected)
     }
 

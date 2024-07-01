@@ -7,11 +7,20 @@
 
 import UIKit
 
-struct Review {
-    var user: User
-    var textReview: String
-    var images: [String]?
+struct Review: Codable {
+    let tour: String
+    let reviewerName: String
+    let reviewerPhoto: String
+    let reviewText: String
+
+    enum CodingKeys: String, CodingKey {
+        case tour
+        case reviewerName = "reviewer_name"
+        case reviewerPhoto = "reviewer_photo"
+        case reviewText = "review_text"
+    }
 }
+
 struct User {
     var username: String
     var userImage: String

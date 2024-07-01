@@ -64,10 +64,10 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
                 return UICollectionViewCell()
             }
             
-            let tour = viewModel.tourArray[indexPath.row]
+            let category = viewModel.categories[indexPath.row]
             let isSelected = indexPath == selectedCategoryIndex
             
-            cell.set(tour: tour, isSelected: isSelected)
+            cell.set(category: category.rawValue, isSelected: isSelected)
             return cell
             
         case .discoverPlaces:
@@ -78,8 +78,8 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
                 return UICollectionViewCell()
             }
             
-            let place = viewModel.discoveryArray[indexPath.row]
-            cell.configure(with: place)
+            let tour = viewModel.discoveryArray[indexPath.row]
+            cell.configure(with: tour)
             
             return cell
             
