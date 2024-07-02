@@ -9,7 +9,6 @@ import UIKit
 
 class DetailViewController: UIViewController {
     private let detailView = DetailView()
-    //    private let viewModel: MainViewModel
     private let tour: TourModel
     
     override func loadView() {
@@ -17,7 +16,6 @@ class DetailViewController: UIViewController {
     }
     
     init(tour: TourModel) {
-        //            self.viewModel = viewModel
         self.tour = tour
         super.init(nibName: nil, bundle: nil)
     }
@@ -31,7 +29,6 @@ class DetailViewController: UIViewController {
         loadContent()
         setupDataSource()
         setupTargets()
-        setupNotificationObserver()
     }
     private func loadContent() {
         detailView.reviewsTableView.reloadData()
@@ -47,10 +44,6 @@ class DetailViewController: UIViewController {
         detailView.bookNowButton.addTarget(self, action: #selector(bookNowTapped), for: .touchUpInside)
     }
     
-    private func setupNotificationObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(showPopup), name: NSNotification.Name("BookingViewControllerDismissed"), object: nil)
-    }
-    
     @objc private func bookNowTapped() {
         let bookingPopupVC = BookingViewController(tour: tour)
         if let sheet = bookingPopupVC.sheetPresentationController {
@@ -58,14 +51,6 @@ class DetailViewController: UIViewController {
             sheet.prefersGrabberVisible = true
         }
         present(bookingPopupVC, animated: true, completion: nil)
-    }
-    @objc private func showPopup() {
-        DispatchQueue.main.async {
-            let popUp = PopupViewController(title: "Popup", message: "This is a popup message.", buttonTitle: "Ok")
-            popUp.modalPresentationStyle = .overFullScreen
-            popUp.modalTransitionStyle = .crossDissolve
-            self.present(popUp, animated: true)
-        }
     }
 }
 

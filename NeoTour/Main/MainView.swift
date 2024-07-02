@@ -16,10 +16,12 @@ enum Section: String, CaseIterable {
 
 class MainView: UIView {
     var travelCollectionView: UICollectionView!
+    var loadingIndicator: UIActivityIndicatorView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         travelCollectionView = configureCollectionView()
+        loadingIndicator = configureLoadingIndicator()
     }
     
     required init?(coder: NSCoder) {
@@ -28,6 +30,14 @@ class MainView: UIView {
 }
 
 extension MainView {
+    private func configureLoadingIndicator() -> UIActivityIndicatorView {
+            let indicator = UIActivityIndicatorView(style: .large)
+            addSubview(indicator)
+            indicator.translatesAutoresizingMaskIntoConstraints = false
+            indicator.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+            indicator.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+            return indicator
+        }
     
     func configureCollectionView() -> UICollectionView {
         let collectionView = UICollectionView(
@@ -43,8 +53,8 @@ extension MainView {
             forCellWithReuseIdentifier: TravelCategoryCell.reuseIdentifier
         )
         collectionView.register(
-            PlaceCell.self,
-            forCellWithReuseIdentifier: PlaceCell.reuseIdentifier
+            PlaceholderCell.self,
+            forCellWithReuseIdentifier: PlaceholderCell.reuseIdentifier
         )
         collectionView.register(
             PlaceCell.self,

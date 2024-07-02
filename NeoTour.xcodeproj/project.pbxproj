@@ -44,6 +44,7 @@
 		E202C28F2C31479E004AAF83 /* CountriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C28E2C31479E004AAF83 /* CountriesViewModel.swift */; };
 		E202C2912C316890004AAF83 /* BookingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C2902C316890004AAF83 /* BookingViewModel.swift */; };
 		E202C2942C32C5FE004AAF83 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C2932C32C5FE004AAF83 /* NetworkManager.swift */; };
+		E202C2972C347C38004AAF83 /* PlaceholderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E202C2962C347C38004AAF83 /* PlaceholderCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		E202C28E2C31479E004AAF83 /* CountriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewModel.swift; sourceTree = "<group>"; };
 		E202C2902C316890004AAF83 /* BookingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewModel.swift; sourceTree = "<group>"; };
 		E202C2932C32C5FE004AAF83 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		E202C2962C347C38004AAF83 /* PlaceholderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +215,7 @@
 			children = (
 				E202C22F2C2BE92B004AAF83 /* TravelCategoryCell.swift */,
 				E202C2332C2BFA16004AAF83 /* PlaceCell.swift */,
+				E202C2962C347C38004AAF83 /* PlaceholderCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 				E202C27F2C3090A8004AAF83 /* PopupView.swift in Sources */,
 				E202C2192C2A881A004AAF83 /* MainViewController.swift in Sources */,
 				E202C2812C3091A1004AAF83 /* PopupViewController.swift in Sources */,
+				E202C2972C347C38004AAF83 /* PlaceholderCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

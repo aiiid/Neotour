@@ -19,6 +19,14 @@ class PopupView: UIView {
         return label
     }()
     
+    var messageLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        return label
+    }()
+    
     let submitButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Ok", for: .normal)
@@ -51,12 +59,13 @@ class PopupView: UIView {
         
         containerView.addSubview(verticalStack)
         verticalStack.addArrangedSubview(titleLabel)
+        verticalStack.addArrangedSubview(messageLabel)
         verticalStack.addArrangedSubview(submitButton)
         
         containerView.snp.makeConstraints { make in
             make.center.equalToSuperview()
             make.width.equalToSuperview().multipliedBy(0.8)
-            make.height.equalTo(150)
+            make.height.equalTo(250)
         }
         
         verticalStack.snp.makeConstraints { make in

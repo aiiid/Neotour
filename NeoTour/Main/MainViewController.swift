@@ -37,7 +37,11 @@ class MainViewController: UIViewController {
     }
     
     private func fetchInitialData() {
+        contentView.loadingIndicator.startAnimating()
         viewModel.fetchTours(by: .popular) { [weak self] result in
+            DispatchQueue.main.async {
+                self?.contentView.loadingIndicator.stopAnimating()
+            }
             switch result {
             case .success(let tours):
                 DispatchQueue.main.async {
@@ -54,17 +58,18 @@ class MainViewController: UIViewController {
 
 extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
+        
         return Section.allCases.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch Section.allCases[section] {
+        let sectionLayoutKind = Section.allCases[section]
+        
+        switch sectionLayoutKind {
         case .travelCategories:
             return viewModel.categories.count
-        case .discoverPlaces:
-            return viewModel.tourArray.count
-        case .recommendedPlaces:
-            return viewModel.tourArray.count
+        case .discoverPlaces, .recommendedPlaces:
+            return viewModel.isLoading ? 5 : viewModel.tourArray.count
         }
     }
     
@@ -86,34 +91,32 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
             cell.set(category: category.rawValue, isSelected: isSelected)
             return cell
             
-        case .discoverPlaces:
-            guard let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: PlaceCell.reuseIdentifier,
-                for: indexPath
-            ) as? PlaceCell else {
-                return UICollectionViewCell()
+        case .discoverPlaces, .recommendedPlaces:
+            if viewModel.isLoading {
+                // Configure placeholder cell
+                guard let cell = collectionView.dequeueReusableCell(
+                    withReuseIdentifier: PlaceholderCell.reuseIdentifier,
+                    for: indexPath
+                ) as? PlaceholderCell else {
+                    return UICollectionViewCell()
+                }
+                return cell
+            } else {
+                guard let cell = collectionView.dequeueReusableCell(
+                    withReuseIdentifier: PlaceCell.reuseIdentifier,
+                    for: indexPath
+                ) as? PlaceCell else {
+                    return UICollectionViewCell()
+                }
+                
+                let tour = viewModel.tourArray[indexPath.row]
+                cell.configure(with: tour)
+                
+                return cell
             }
-            
-            let tour = viewModel.tourArray[indexPath.row]
-            cell.configure(with: tour)
-            
-            return cell
-            
-        case .recommendedPlaces:
-            guard let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: PlaceCell.reuseIdentifier,
-                for: indexPath
-            ) as? PlaceCell else {
-                return UICollectionViewCell()
-            }
-            
-            let tour = viewModel.tourArray[indexPath.row]
-            cell.configure(with: tour)
-            
-            return cell
         }
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         guard kind == HeaderView.sectionHeaderElementKind,
               let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderView.reuseIdentifier, for: indexPath) as? HeaderView else {
@@ -134,8 +137,16 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
                 selectedCategoryIndex = indexPath
                 collectionView.reloadItems(at: [indexPath])
             }
+            viewModel.tourArray = []
+            collectionView.reloadData()
             let selectedCategory = viewModel.categories[indexPath.row]
+            
+            contentView.loadingIndicator.startAnimating()
+            
             viewModel.fetchTours(by: selectedCategory) { [weak self] result in
+                DispatchQueue.main.async {
+                    self?.contentView.loadingIndicator.stopAnimating()
+                }
                 switch result {
                 case .success(let tours):
                     DispatchQueue.main.async {

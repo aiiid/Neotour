@@ -9,15 +9,16 @@ import UIKit
 
 class PopupViewController: UIViewController {
     private let popupView = PopupView()
+    var onDismiss: (() -> Void)?
     
     override func loadView() {
         view = popupView
     }
     
-    init(title: String? = nil, message: String? = nil, buttonTitle: String? = nil) {
+    init(title: String? = nil, message: String, buttonTitle: String? = "Ok") {
         super.init(nibName: nil, bundle: nil)
         popupView.titleLabel.text = title
-//        self.message = message
+        popupView.messageLabel.text = message
         popupView.submitButton.setTitle(buttonTitle, for: .normal)
     }
     
@@ -35,7 +36,8 @@ class PopupViewController: UIViewController {
     }
     
     @objc private func submitTapped() {
-        print("OK")
-        dismiss(animated: true)
+        dismiss(animated: true) { [weak self] in
+                   self?.onDismiss?()
+               }
     }
 }

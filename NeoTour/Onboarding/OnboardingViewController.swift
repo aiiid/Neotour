@@ -17,11 +17,6 @@ class OnboardingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let font = UIFont(name: "SFProDisplay-Regular", size: 36) {
-            print("Font loaded successfully: \(font)")
-        } else {
-            print("Failed to load the font.")
-        }
         view.backgroundColor = .white
         setupViewModel()
         setupTargets() // Add this line to ensure targets are set up
@@ -40,9 +35,8 @@ class OnboardingViewController: UIViewController {
     }
     
     @objc func letsGoTapped() {
-        print("lets go tapped")
 //        UserDefaults.standard.set(true, forKey: "hasCompletedOnboarding")
-        let mainViewController = MainViewController() // Replace with your initial view controller
+        let mainViewController = MainViewController() 
         let navigationController = UINavigationController(rootViewController: mainViewController)
         
         if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,

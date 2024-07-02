@@ -48,7 +48,7 @@ struct Review: Codable {
     let reviewerName: String
     let reviewerPhoto: String
     let reviewText: String
-
+    
     enum CodingKeys: String, CodingKey {
         case tour
         case reviewerName = "reviewer_name"
@@ -64,11 +64,9 @@ struct PlaceModel {
 }
 
 class MainViewModel {
-    
     var tourArray: [TourModel] = []
-    var discoveryArray: [TourModel] = []
-    var recommendationArray: [TourModel] = []
     var categories: [TourCategory] = TourCategory.allCases
+    var isLoading: Bool = true
     
     func fetchTours(by category: TourCategory, completion: @escaping (Result<[TourModel], Error>) -> Void) {
         let urlString = "https://muha-backender.org.kg/category-tour/\(category.rawValue)/"
@@ -78,6 +76,9 @@ class MainViewModel {
         }
         
         NetworkManager.shared.request(url: url, method: .GET, responseType: [TourModel].self) { result in
+            DispatchQueue.main.async {
+                self.isLoading = false
+            }
             switch result {
             case .success(let tours):
                 self.tourArray = tours
@@ -85,56 +86,6 @@ class MainViewModel {
             case .failure(let error):
                 completion(.failure(error))
             }
-        }
-    }
-}
-
-enum Region: String, CaseIterable, Codable {
-    case europe = "Europe"
-    case asia = "Asia"
-    case northAmerica = "North America"
-    case southAmerica = "South America"
-    case africa = "Africa"
-    case australia = "Australia"
-    case antarctica = "Antarctica"
-
-    init?(rawValue: String) {
-        switch rawValue.lowercased() {
-        case "europe":
-            self = .europe
-        case "asia":
-            self = .asia
-        case "north_america":
-            self = .northAmerica
-        case "south_america":
-            self = .southAmerica
-        case "africa":
-            self = .africa
-        case "australia":
-            self = .australia
-        case "antarctica":
-            self = .antarctica
-        default:
-            return nil
-        }
-    }
-
-    var stringValue: String {
-        switch self {
-        case .europe:
-            return "europe"
-        case .asia:
-            return "asia"
-        case .northAmerica:
-            return "north_america"
-        case .southAmerica:
-            return "south_america"
-        case .africa:
-            return "africa"
-        case .australia:
-            return "australia"
-        case .antarctica:
-            return "antarctica"
         }
     }
 }
