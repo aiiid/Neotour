@@ -2,9 +2,11 @@
 
 NeoTour is an iOS app designed to help users discover and book tours. It allows users to view tour descriptions, images, reviews, and make bookings. The app is built programmatically using UIKit, with integrations like SwiftLint, CocoaPods, SnapKit, and Collection View Compositional Layouts.
 
-<img src="https://github.com/aiiid/Neotour/assets/123296393/75ae2436-33ad-4a14-aa85-ed1de270db96" alt="NeoTour_1" width="300">
-<img src="https://github.com/aiiid/Neotour/assets/123296393/5520d3f2-659b-4a69-b9cc-7ff44b0ba0ac" alt="NeoTour_2" width="300">
-<img src="https://github.com/aiiid/Neotour/assets/123296393/c19ead2e-38a0-4661-a205-b1a841d85f78" alt="NeoTour_2" width="300">
+<img src="https://github.com/aiiid/Neotour/assets/123296393/c19ead2e-38a0-4661-a205-b1a841d85f78" alt="NeoTour_1" width="300">
+<img src="https://github.com/aiiid/Neotour/assets/123296393/75ae2436-33ad-4a14-aa85-ed1de270db96" alt="NeoTour_2" width="300">
+<img src="https://github.com/aiiid/Neotour/assets/123296393/5520d3f2-659b-4a69-b9cc-7ff44b0ba0ac" alt="NeoTour_3" width="300">
+<img src="https://github.com/aiiid/Neotour/assets/123296393/0cbf4be4-2547-4618-8fb9-6dcbb617d2fa" alt="NeoTour_4" width="300">
+<img src="https://github.com/aiiid/Neotour/assets/123296393/062df641-6230-4242-83fe-2ca34dfb5eca" alt="NeoTour_5" width="300">
 
 ## Description
 
